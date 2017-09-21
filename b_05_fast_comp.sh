@@ -21,5 +21,5 @@ for (( i=0; i<${subjLen}; i++ )); do
 	command+="${parentpath}/${subj}/derived/04_composition/${subj}_PD_bet_nosub "
 	command+="${parentpath}/${subj}/derived/04_composition/${subj}_T2s_bet_nosub "
   echo "${command}"
-  #${command}
+  ${command}
 done

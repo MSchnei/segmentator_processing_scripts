@@ -19,5 +19,5 @@ for (( i=0; i<${subjLen}; i++ )); do
   command+="-o ${parentpath}/${subj}/derived/03_division/fast/${subj}_division "
 	command+="${parentpath}/${subj}/derived/03_division/${subj}_T1wDivPD_bet_nosub "
   echo "${command}"
-  #${command}
+  ${command}
 done

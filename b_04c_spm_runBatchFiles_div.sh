@@ -19,8 +19,4 @@ for (( i=0; i<${subjLen}; i++ )); do
 	command="MATLAB -nodisplay -nodesktop -nosplash -r run('${pathTextFile}');"
 	echo "${command}"
 	${command}
-	# remove batch file
-	# command="rm -rf ${pathTextFile}"
-	# echo "${command}"
-	# ${command}
 done

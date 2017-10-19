@@ -28,7 +28,7 @@ for (( i=0; i<${subjLen}; i++ )); do
 	subj=${app[i]}
 	pathTextFile="${parentpath}/${subj}/derived/03_division/spm/spm_div.m"
 	# run SPM batch script
-	command="MATLAB -nodisplay -nodesktop -nosplash -r run('${pathTextFile}');"
+	command="MATLAB -nodisplay -nodesktop -nosplash -r run('${pathTextFile}'); exit;"
 	echo "${command}"
 	${command}
 done

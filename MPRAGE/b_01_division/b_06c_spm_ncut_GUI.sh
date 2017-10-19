@@ -24,15 +24,15 @@ declare -a arr_t1=(
     )
 
 # set 2D histogram properties
-percmin="2.5"
-percmax="97.5"
+percmin="0.1"
+percmax="99.9"
 scale="400"
-gramag="3D_scharr"
 cbar_init="2.0"
 cbar_max="5.0"
+gramag="3D_scharr"
 
 # set path to ncut.npy file
-ncut_base="_T1wDivPD_msk_volHist_pMax97pt5_pMin2pt5_sc400_ncut_sp2500_c2pt0.npy"
+ncut_base="_T1wDivPD_msk_volHist_pMax99pt9_pMin0pt1_sc400_ncut_sp2500_c2pt0.npy"
 
 echo "====================="
 echo "Batch Segmentator GUI"

@@ -27,18 +27,49 @@ declare -a app=(
 subjLen=${#app[@]}
 for (( i=0; i<${subjLen}; i++ )); do
   subj=${app[i]}
+	echo "##########################"
+	echo ${subj}
+	echo "##########################"
   # generate SPM brain mask from WM, GM, CSF
 	command="fslmaths ${parentpath}/${subj}/derived/03_division/spm/c1${subj}_T1wDivPD_max "
 	command+="-add ${parentpath}/${subj}/derived/03_division/spm/c2${subj}_T1wDivPD_max "
 	command+="-add ${parentpath}/${subj}/derived/03_division/spm/c3${subj}_T1wDivPD_max "
-	brainmask="${parentpath}/${subj}/derived/03_division/spm/${subj}_spm_brain_mask"
+	brainmask="${parentpath}/${subj}/derived/03_division/spm/spm_brain_mask"
 	command+="${brainmask} "
 	echo "${command}"
 	${command}
-	# apply brain mask to restored SPM image
+
+	# combine brain and no submask
+	submask="${parentpath}/${subj}/derived/02_masks/nosub.nii.gz"
+	brainsubmask="${parentpath}/${subj}/derived/03_division/spm/spm_brain_mask_nosub"
+	intersection="${parentpath}/${subj}/derived/03_division/spm/intersection"
+	# create intersection brain mask and submask
+	command="fslmaths ${brainmask} -mas ${submask} ${intersection}"
+	echo "${command}"
+	${command}
+	# subtract intersection from brain mask
+	command="fslmaths ${brainmask} -sub ${intersection} ${brainsubmask}"
+	echo "${command}"
+	${command}
+	# delete the intersection
+	command="rm -rf ${intersection}.nii.gz"
+	echo "${command}"
+	${command}
+
+	# copy spm_brain_mask and spm_brain_mask_nosub to masks folder
+	destination="${parentpath}/${subj}/derived/02_masks/spm_brain_mask"
+	command="cp ${brainmask}.nii.gz ${destination}.nii.gz"
+	echo "${command}"
+	${command}
+	destination="${parentpath}/${subj}/derived/02_masks/spm_brain_mask_nosub"
+	command="cp ${brainsubmask}.nii.gz ${destination}.nii.gz"
+	echo "${command}"
+	${command}
+
+	# apply brain nosub mask to restored SPM image
 	input="${parentpath}/${subj}/derived/03_division/spm/m${subj}_T1wDivPD"
 	output="${parentpath}/${subj}/derived/03_division/spm/m${subj}_T1wDivPD_msk"
-	command="fslmaths ${input} -mas ${brainmask} ${output}"
+	command="fslmaths ${input} -mas ${brainsubmask} ${output}"
 	echo "${command}"
 	${command}
 

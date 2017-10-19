@@ -25,8 +25,8 @@ declare -a arr_t1=(
     )
 
 # set 2D histogram properties
-percmin="2.5"
-percmax="97.5"
+percmin="0.1"
+percmax="99.9"
 scale="400"
 cbar_init="2.0"
 cbar_max="5.0"

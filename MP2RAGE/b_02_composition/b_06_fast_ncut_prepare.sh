@@ -57,6 +57,7 @@ for (( i=0; i<${tLen}; i++ )); do
   command="segmentator --ncut_prepare ${hist_name} "
   command+="--ncut_maxRec ${mR} --ncut_nrSupPix ${sp} --ncut_compactness ${c} "
   command+="--percmin ${percmin} --percmax ${percmax} --scale ${scale} "
+  command+="--gramag ${input_name2} "
   command+="--cbar_init ${cbar_init} --cbar_max ${cbar_max}"
   echo "${command}"
   ${command}

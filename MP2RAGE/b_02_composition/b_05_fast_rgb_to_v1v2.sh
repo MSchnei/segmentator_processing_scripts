@@ -34,9 +34,9 @@ for (( i=0; i<${subjLen}; i++ )); do
   print="----- Subj ${subj} fast -----"
   echo ${print}
   command="python rgb_to_v1v2_cmdlne.py "
-  command+="${parentpath}/${subj}/derived/04_composition/${subj}_trio_restore_3.nii.gz "  # uni
-  command+="${parentpath}/${subj}/derived/04_composition/${subj}_trio_restore_2.nii.gz "  # inv2
-  command+="${parentpath}/${subj}/derived/04_composition/${subj}_trio_restore_1.nii.gz "  # t2s
+  command+="${parentpath}/${subj}/derived/04_composition/${subj}_trio_restore_1.nii.gz "
+  command+="${parentpath}/${subj}/derived/04_composition/${subj}_trio_restore_2.nii.gz "
+  command+="${parentpath}/${subj}/derived/04_composition/${subj}_trio_restore_3.nii.gz "
   command+="${parentpath}/${subj}/derived/02_masks/brain_mask_nosub.nii.gz"
   echo ${command}
   ${command}

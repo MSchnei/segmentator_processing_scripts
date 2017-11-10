@@ -34,8 +34,8 @@ for (( i=0; i<${subjLen}; i++ )); do
 	${command}
 
 	# mask with the nosub mask
-	mask="${parentpath}/${subj}/derived/02_masks/nosub"
-	command="fslmaths $mask -mul -1 -add 1 -mul ${destination}_unmsk ${destination}"
+	mask="${parentpath}/${subj}/derived/02_masks/spm_brain_mask_open_nosub"
+	command="fslmaths ${destination}_unmsk -mas ${mask}  ${destination}"
 	echo "${command}"
 	${command}
 

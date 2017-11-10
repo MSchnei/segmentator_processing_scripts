@@ -30,24 +30,14 @@ for (( i=0; i<${subjLen}; i++ )); do
 	echo "##########################"
 	echo ${subj}
 	echo "##########################"
-  # generate SPM brain mask from WM, GM, CSF
-	command="fslmaths ${parentpath}/${subj}/derived/03_division/spm/c1${subj}_T1wDivPD_max "
-	command+="-add ${parentpath}/${subj}/derived/03_division/spm/c2${subj}_T1wDivPD_max "
-	command+="-add ${parentpath}/${subj}/derived/03_division/spm/c3${subj}_T1wDivPD_max "
 
 	# NOTE: We have applied a morphological operation (2 step opening) to the
 	# brain mask and called it with _open suffix
 	brainmask="${parentpath}/${subj}/derived/03_division/spm/spm_brain_mask_open"
 
-	command+="${brainmask} "
-	echo "${command}"
-	${command}
-
 	# combine brain and no submask
 	submask="${parentpath}/${subj}/derived/02_masks/nosub.nii.gz"
-	brainsubmask="${parentpath}/${subj}/derived/03_division/spm/spm_brain_mask_nosub"
-	intersection="${parentpath}/${subj}/derived/03_division/spm/intersection"
-
+	brainsubmask="${parentpath}/${subj}/derived/03_division/spm/spm_brain_mask_open_nosub"
 	command="fslmaths ${submask} -binv -mul ${brainmask} ${brainsubmask}"
 	echo "${command}"
 	${command}
@@ -57,7 +47,7 @@ for (( i=0; i<${subjLen}; i++ )); do
 	command="cp ${brainmask}.nii.gz ${destination}.nii.gz"
 	echo "${command}"
 	${command}
-	destination="${parentpath}/${subj}/derived/02_masks/spm_brain_mask_nosub"
+	destination="${parentpath}/${subj}/derived/02_masks/spm_brain_mask_open_nosub"
 	command="cp ${brainsubmask}.nii.gz ${destination}.nii.gz"
 	echo "${command}"
 	${command}
@@ -65,7 +55,7 @@ for (( i=0; i<${subjLen}; i++ )); do
 	# apply brain nosub mask to restored SPM image
 	input="${parentpath}/${subj}/derived/03_division/spm/m${subj}_T1wDivPD"
 	output="${parentpath}/${subj}/derived/03_division/spm/m${subj}_T1wDivPD_msk"
-	command="fslmaths ${input} -mas ${brainsubmask} ${output}"
+	command="fslmaths ${input} -mas ${destination} ${output}"
 	echo "${command}"
 	${command}
 

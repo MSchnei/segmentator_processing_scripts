@@ -38,7 +38,7 @@ for (( i=0; i<${subjLen}; i++ )); do
   command+="${parentpath}/${subj}/derived/04_composition/spm_T1_PD_T2s/m${subj}_T1w_eq.nii.gz "
   command+="${parentpath}/${subj}/derived/04_composition/spm_T1_PD_T2s/m${subj}_PD_eq.nii.gz "
   command+="${parentpath}/${subj}/derived/04_composition/spm_T1_PD_T2s/m${subj}_T2s_eq.nii.gz "
-  command+="${parentpath}/${subj}/derived/02_masks/spm_brain_mask_nosub.nii.gz"
+  command+="${parentpath}/${subj}/derived/02_masks/spm_brain_mask_open_nosub.nii.gz"
   echo ${command}
   ${command}
 done

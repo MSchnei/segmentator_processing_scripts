@@ -1,10 +1,20 @@
-"""Convert EvaluateSegmentation XML outputs to simple tables.
+"""
+Description: Convert EvaluateSegmentation XML outputs to simple tables.
+To be set:
+   -path to parent directory,
+   -list with programme names used for initial segmentation
+   -subject names
+   -artifact flag
+Input:
+   -grey matter evaluation xml files
+Output:
+   -overview tables with results
+Written by: Marian Schneider, OF Gulban
 
 Dependency:
 https://github.com/Visceral-Project/EvaluateSegmentation
 
 Note: assumes that evaluate segmentation file was run
-
 """
 
 import os

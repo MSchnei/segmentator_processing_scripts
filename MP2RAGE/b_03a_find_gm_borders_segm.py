@@ -1,4 +1,15 @@
-"""Find grey matter borders for GM segmentations."""
+"""
+Description: Find grey matter borders for GM segmentations.
+To be set:
+   -path to parent directory,
+   -subject names
+   -list of grey matter segmentations
+Input:
+   -grey matter segmentations
+Output:
+   -grey matter segmentation borders
+Written by: Marian Schneider, OF Gulban
+"""
 
 import os
 from scipy.ndimage import morphology, generate_binary_structure

@@ -1,4 +1,14 @@
-"""Find grey matter borders for ground truth."""
+"""
+Description: Find grey matter borders for ground truth.
+To be set:
+   -path to parent directory,
+   -subject names
+Input:
+   -grey matter ground truth files
+Output:
+   -grey matter ground truth borders
+Written by: Marian Schneider, OF Gulban
+"""
 
 import os
 import glob

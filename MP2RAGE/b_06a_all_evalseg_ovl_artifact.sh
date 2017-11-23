@@ -1,5 +1,16 @@
 #!/bin/bash
 
+#### Description: Get overlap-based metrics for artifact-masked segmentations
+#### To be set:
+####    -path to parent directory,
+####    -path to EvaluateSegmentation tool
+####    -list with programme names for initial GM segmentation
+#### Input:
+####    -artifact-masked grey matter segmentations
+#### Output:
+####    -overlap-based metrics for artifact-masked GM segmentations
+#### Written by: Marian Schneider - marian.schneider@maastrichtuniversity.nl
+
 # set path to folder with the validation data
 parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"
 

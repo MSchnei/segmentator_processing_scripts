@@ -1,4 +1,16 @@
-#/bin/bash
+#!/bin/bash
+
+#### Description: Mask grey matter segmentations with artifact mask.
+#### To be set:
+####    -path to parent directory,
+####    -subject names
+####    -grey matter segmentation file names
+#### Input:
+####    -grey matter segmentations
+####    -artifact mask
+#### Output:
+####    -artifact-masked grey matter segmentations
+#### Written by: Marian Schneider - marian.schneider@maastrichtuniversity.nl
 
 parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
 

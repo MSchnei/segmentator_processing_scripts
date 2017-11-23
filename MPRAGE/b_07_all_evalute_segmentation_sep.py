@@ -1,10 +1,21 @@
-"""Convert EvaluateSegmentation XML outputs to simple tables.
+"""
+Description: Convert EvaluateSegmentation XML outputs to simple tables.
+To be set:
+   -path to parent directory,
+   -list with programme names used for initial segmentation
+   -subject names
+   -artifact flag
+Input:
+   -grey matter evaluation xml files
+Output:
+   -overview tables with results
+Written by: Marian Schneider, OF Gulban
 
 Dependency:
 https://github.com/Visceral-Project/EvaluateSegmentation
 
-Note: assumes that evaluate segmentation file was run
-
+Note1: assumes that evaluate segmentation file was run
+Note2: this script uses seperate inputs from distance and overlap metrics
 """
 
 import os
@@ -22,7 +33,7 @@ switchList = ['spm', 'fast']  # 'fast' or 'spm'
 # specify subject identifiers
 subj = ['S02', 'S03', 'S05', 'S06', 'S07']
 # should the data be masked for artifacts?
-artimask = True  # True or False
+artimask = False  # True or False
 
 # %% collect all xml files and put their paths into a list
 summary = []

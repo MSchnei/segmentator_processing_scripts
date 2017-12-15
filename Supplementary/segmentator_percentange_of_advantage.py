@@ -1,12 +1,20 @@
-"""Compute approximate time savings using segmentator."""
+"""Compute approximate time savings using Segmentator.
+
+The boost is estimated in comparison to the manual slice-by-slice correction of
+automatic segmentation mistakes.
+"""
 
 import numpy as np
 from nibabel import load
 
-gt = load("/path/to/S001_gm_06_artifact_masked.nii.gz")
-nii_1 = load("/path/to/S001_uni_fast_gm_artifact_masked.nii.gz")
-nii_2 = load("/path/to/S001_uni_fast_gm_gramag_artifact_masked.nii.gz")
+# ground truth
+gt = load("/path/to/S001_gm_06_artif\act_masked.nii.gz")
+# automatic segmentation process output (eg. fsl-fast, cbs-tools, spm)
+nii_1 = load("/path/to/S001_uni_cbs_gm_artifact_masked.nii.gz")
+# gray matter labels after using segmentator
+nii_2 = load("/path/to/S001_uni_cbs_gm_gramag_artifact_masked.nii.gz")
 
+# -----------------------------------------------------------------------------
 gt = gt.get_data()
 nii_1 = nii_1.get_data()
 nii_2 = nii_2.get_data()
@@ -25,7 +33,6 @@ nr_FP_difference = nr_FP_before - nr_FP_after
 
 nr_hits_before / (nr_hits_before + nr_FP_before)
 nr_of_voxels_benefit = nr_FP_difference - nr_hits_difference
-
 
 # assumed nr of voxels per second on average that can be corrected manually by
 # a human operator (eg. a poor phd student)

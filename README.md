@@ -71,11 +71,11 @@ wget -P ${segm_path}/data/ "https://zenodo.org/record/1206163/files/shared_data.
 
 # unzip the downloaded folders
 unzip ${segm_path}/code/master.zip -d ${segm_path}/code/
-unzip ${segm_path}/data/segmentator_shared_data.zip -d ${segm_path}/data/
+unzip ${segm_path}/data/shared_data.zip -d ${segm_path}/data/
 
 # remove zipped folders
 rm -rf ${segm_path}/code/master.zip
-rm -rf ${segm_path}/data/segmentator_shared_data.zip
+rm -rf ${segm_path}/data/shared_data.zip
 
 # remove in-between folders
 mv ${segm_path}/code/segmentator_processing_scripts-master/* ${segm_path}/code/

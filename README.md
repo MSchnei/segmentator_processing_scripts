@@ -3,6 +3,7 @@
 # segmentator_processing_scripts
 
 This repository hosts code for the analysis of the following paper:
+
 [A scalable method to improve gray matter segmentation at ultra high field MRI](https://www.biorxiv.org/content/early/2018/01/10/245738)
 
 ## Analysis steps
@@ -35,8 +36,8 @@ wget -P ${segm_path}/code/ "https://github.com/MSchnei/segmentator_processing_sc
 wget -P ${segm_path}/data/ "https://zenodo.org/record/1117859/files/segmentator_shared_data.zip"
 
 # unzip the downloaded folders
-unzip ${segm_path}/code/master.zip -j -d ${segm_path}/code/
-unzip ${segm_path}/data/segmentator_shared_data.zip -j -d ${segm_path}/data/
+unzip ${segm_path}/code/master.zip -d ${segm_path}/code/
+unzip ${segm_path}/data/segmentator_shared_data.zip -d ${segm_path}/data/
 
 # remove zipped folders
 rm -rf ${segm_path}/code/master.zip
@@ -46,7 +47,10 @@ rm -rf ${segm_path}/data/segmentator_shared_data.zip
 
 ### Create folder structure for analysis
 ```
-${segm_path}/code/segmentator_processing_scripts/MPRAGE/b_00_create_directory_tree_mprage.sh
+# Run the following lines to create the directory tree necessary for the analysis:
+${segm_path}/code/segmentator_processing_scripts-master/MPRAGE/b_00_create_directory_tree_mprage.sh
+${segm_path}/code/segmentator_processing_scripts-master/MP2RAGE/b_00_create_directory_tree_mp2rage.sh
+
 
 
 

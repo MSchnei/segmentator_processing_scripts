@@ -9,7 +9,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set path to designated analysis folder
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data"
+parent_path="${segm_path}/analysis"
 
 # list all subject names
 declare -a subjects=(
@@ -20,7 +20,7 @@ declare -a subjects=(
         )
 
 # deduce path to mp2rage folder
-mp2rage_folder = "${parentpath}/MP2RAGE"
+mp2rage_folder = "${parent_path}/MP2RAGE"
 # create mp2rage folder
 mkdir -p ${mp2rage_folder}
 

@@ -14,7 +14,7 @@ Output:
     -T1w_eq.nii for all subjects
     -PD_eq.nii for all subjects
     -T2s_eq.nii for all subjects
-Written by: Marian Schneider - marian.schneider@maastrichtuniversity.nl
+Written by: Marian Schneider, Faruk Gulban
 """
 
 import os

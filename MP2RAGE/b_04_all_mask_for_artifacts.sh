@@ -10,7 +10,7 @@
 ####    -artifact mask
 #### Output:
 ####    -artifact-masked grey matter segmentations
-#### Written by: Marian Schneider - marian.schneider@maastrichtuniversity.nl
+#### Written by: Marian Schneider, Faruk Gulban
 
 parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"
 

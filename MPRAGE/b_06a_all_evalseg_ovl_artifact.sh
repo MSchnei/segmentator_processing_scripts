@@ -9,7 +9,7 @@
 ####    -artifact-masked grey matter segmentations
 #### Output:
 ####    -overlap-based metrics for artifact-masked GM segmentations
-#### Written by: Marian Schneider - marian.schneider@maastrichtuniversity.nl
+#### Written by: Marian Schneider, Faruk Gulban
 
 
 # set path to folder with the validation data

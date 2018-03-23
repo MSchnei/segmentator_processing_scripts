@@ -11,7 +11,7 @@
 #### Output:
 ####    -fast biased-corrected uni, inv2, t2s for all subjects
 ####    -fast segmentation results for all subjects [not used later]
-#### Written by: Marian Schneider - marian.schneider@maastrichtuniversity.nl
+#### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
 parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"

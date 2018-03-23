@@ -8,7 +8,7 @@ Input:
    -grey matter segmentations
 Output:
    -grey matter segmentation borders
-Written by: Marian Schneider, OF Gulban
+Written by: Marian Schneider, Faruk Gulban
 """
 
 import os

@@ -9,6 +9,6 @@
 ####    -spm hard segmentation labels for GM, WM, CSF
 #### Output:
 ####    -spm biased corrected T1divPD image
-#### Written by: Marian Schneider - marian.schneider@maastrichtuniversity.nl
+#### Written by: Marian Schneider, Faruk Gulban
 
 NOTE: open the brain mask with a morphology operation

@@ -7,7 +7,7 @@ Input:
    -grey matter ground truth files
 Output:
    -grey matter ground truth borders
-Written by: Marian Schneider, OF Gulban
+Written by: Marian Schneider, Faruk Gulban
 """
 
 import os

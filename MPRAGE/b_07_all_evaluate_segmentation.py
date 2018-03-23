@@ -9,7 +9,7 @@ Input:
    -grey matter evaluation xml files
 Output:
    -overview tables with results
-Written by: Marian Schneider, OF Gulban
+Written by: Marian Schneider, Faruk Gulban
 
 Dependency:
 https://github.com/Visceral-Project/EvaluateSegmentation

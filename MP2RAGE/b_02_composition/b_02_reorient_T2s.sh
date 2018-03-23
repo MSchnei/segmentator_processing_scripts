@@ -23,4 +23,5 @@ fslorient -setsform $sformhdr ${file_header_after}
 qformhdr=$(fslorient -getqform ${file_header_proper})
 fslorient -setqform $qformhdr ${file_header_after}
 
-# Note: this is just an example script for a single subject file. This still needs to be batch scripted.
+# Note: this is just an example script for a single subject file.
+# This still needs to be batch scripted.

@@ -9,7 +9,7 @@
 ####    -grey matter segmentations
 #### Output:
 ####    -distance-based metrics for GM segmentations
-#### Written by: Marian Schneider - marian.schneider@maastrichtuniversity.nl
+#### Written by: Marian Schneider, Faruk Gulban
 
 # set path to folder with the validation data
 parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"

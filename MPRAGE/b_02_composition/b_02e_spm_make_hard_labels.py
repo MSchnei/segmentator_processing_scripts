@@ -10,7 +10,7 @@ Input:
    -soft spm segmentation labels for all subjects
 Output:
    -hard spm segmentation labels for all subjects
-Written by: Marian Schneider - marian.schneider@maastrichtuniversity.nl
+Written by: Marian Schneider, Faruk Gulban
 """
 
 import os

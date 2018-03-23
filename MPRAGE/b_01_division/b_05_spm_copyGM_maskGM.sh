@@ -8,7 +8,7 @@
 ####    -spm grey matter results for all subjects
 #### Output:
 ####    -nosub masked spm grey matter results for all subjects
-#### Written by: Marian Schneider - marian.schneider@maastrichtuniversity.nl
+#### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
 parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"

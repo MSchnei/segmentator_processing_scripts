@@ -9,7 +9,7 @@
 ####    -none, this is just preparation
 #### Output:
 ####    -none yet, this is just preparation
-#### Written by: Marian Schneider - marian.schneider@maastrichtuniversity.nl
+#### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
 parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"

@@ -9,7 +9,7 @@
 ####    -segmentator brain mask for spm GM
 #### Output:
 ####    -segmentator-masked spm grey matter label
-#### Written by: Marian Schneider - marian.schneider@maastrichtuniversity.nl
+#### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
 parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"

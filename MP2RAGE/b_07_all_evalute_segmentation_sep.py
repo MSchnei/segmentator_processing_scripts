@@ -9,7 +9,7 @@ Input:
    -grey matter evaluation xml files
 Output:
    -overview tables with results
-Written by: Marian Schneider, OF Gulban
+Written by: Marian Schneider, Faruk Gulban
 
 Dependency:
 https://github.com/Visceral-Project/EvaluateSegmentation
@@ -33,7 +33,7 @@ switchList = ['cbs', 'fast']
 # specify subject identifiers
 subj = ['S001', 'S013', 'S014', 'S019']
 # should the data be masked for artifacts?
-artimask = False  # True or False
+artimask = True  # True or False
 
 # %% collect all xml files and put their paths into a list
 summary = []
@@ -161,14 +161,15 @@ df = df.astype(float)
 
 # calculate means across subjects
 # select only orig
-print("Show orig means:")
-print df.iloc[::3].mean()
+print("Show orig median:")
+print df.iloc[::3].median()
+
 # select only gramag
-print("Show gramag means:")
-print df.iloc[1::3].mean()
+print("Show gramag median:")
+print df.iloc[1::3].median()
 # select only simplex
-print("Show simplex means:")
-print df.iloc[2::3].mean()
+print("Show simplex median:")
+print df.iloc[2::3].median()
 
 # calculate stds across subjects
 # select only orig

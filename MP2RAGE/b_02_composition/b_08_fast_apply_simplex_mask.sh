@@ -9,7 +9,7 @@
 ####    -simplex brain mask
 #### Output:
 ####    -simplex-masked fast grey matter label
-#### Written by: Marian Schneider - marian.schneider@maastrichtuniversity.nl
+#### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
 parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"

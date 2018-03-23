@@ -8,13 +8,30 @@ This repository hosts the code used to process the data for the Segmentator pape
 ## Analysis steps
 Follow the following steps for the analysis
 
-### Run meta script to set the environment paths
-
-
-### Download the data
-The data is provided in BIDS format. It can be downloaded by running
+### Set up the environment
 ```
-wget -P /home/user/segmentator/data/ "https://zenodo.org/record/1117859/files/segmentator_shared_data.zip"
+# set parent path
+parent_path="/home/user/segmentator/"
+export parent_path
+
+# create folders for code, data and analysis
+mkdir -p ${parent_path}/code
+mkdir -p ${parent_path}/data
+mkdir -p ${parent_path}/analysis
+
+# create aliases for MATLAB and evalseg
+
+```
+
+If this needs to be repeated at a later stage, run 
+
+
+### Download code and data
+The data is provided in BIDS format.
+Code and data can be downloaded by running:
+```
+wget -P ${parent_path}/code/ "https://github.com/MSchnei/segmentator_processing_scripts/archive/master.zip"
+wget -P ${parent_path}/data/ "https://zenodo.org/record/1117859/files/segmentator_shared_data.zip"
 ```
 ### Create folder structure for analysis
 
@@ -28,8 +45,8 @@ The directory tree can be obtained by running the following two commands for the
 MPRAGE and MP2RAGE data analysis, respectively:
 
 ```
-bash /home/user/segmentator/code/b_00_create_directory_tree_mprage.sh
-bash /home/user/segmentator/code/b_00_create_directory_tree_mp2rage.sh
+bash ${parent_path}/code/b_00_create_directory_tree_mprage.sh
+bash ${parent_path}/code/b_00_create_directory_tree_mp2rage.sh
 ```
 
 This should result in the following folder tree for the MPRAGE analysis:

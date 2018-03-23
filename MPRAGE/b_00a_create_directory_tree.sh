@@ -35,7 +35,6 @@ for (( j=0; j<${subjLen}; j++ )); do
   # create subfolders
 	mkdir -p ${mprage_folder}/${subj}
 	mkdir -p ${mprage_folder}/${subj}/source
-	mkdir -p ${mprage_folder}/${subj}/source/orig
 	mkdir -p ${mprage_folder}/${subj}/derived
 	mkdir -p ${mprage_folder}/${subj}/derived/01_ground_truth
 	mkdir -p ${mprage_folder}/${subj}/derived/02_masks

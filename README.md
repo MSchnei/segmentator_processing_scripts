@@ -24,7 +24,7 @@ mkdir -p ${segm_path}/analysis
 
 ```
 
-If this needs to be repeated at a later stage, run
+If this needs to be repeated at a later stage, run ...
 
 
 ### Download code and data

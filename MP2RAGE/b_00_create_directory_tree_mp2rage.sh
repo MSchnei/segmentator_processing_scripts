@@ -20,7 +20,7 @@ declare -a subjects=(
         )
 
 # deduce path to mp2rage folder
-mp2rage_folder = "${parent_path}/MP2RAGE"
+mp2rage_folder="${parent_path}/MP2RAGE"
 # create mp2rage folder
 mkdir -p ${mp2rage_folder}
 

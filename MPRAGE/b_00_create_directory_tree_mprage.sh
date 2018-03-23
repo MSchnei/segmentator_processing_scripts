@@ -21,7 +21,7 @@ declare -a subjects=(
         )
 
 # deduce path to mp2rage folder
-mprage_folder = "${parent_path}/MPRAGE"
+mprage_folder="${parent_path}/MPRAGE"
 # create mp2rage folder
 mkdir -p ${mprage_folder}
 

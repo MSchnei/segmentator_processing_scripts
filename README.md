@@ -48,14 +48,8 @@ rm -rf ${segm_path}/data/segmentator_shared_data.zip
 ### Create folder structure for analysis
 ```
 # Run the following lines to create the directory tree necessary for the analysis:
-${segm_path}/code/segmentator_processing_scripts-master/MPRAGE/b_00_create_directory_tree_mprage.sh
-${segm_path}/code/segmentator_processing_scripts-master/MP2RAGE/b_00_create_directory_tree_mp2rage.sh
-
-
-
-
-
-
+bash ${segm_path}/code/segmentator_processing_scripts-master/MPRAGE/b_00_create_directory_tree_mprage.sh
+bash ${segm_path}/code/segmentator_processing_scripts-master/MP2RAGE/b_00_create_directory_tree_mp2rage.sh
 ```
 ### Remap from BIDS format to analysis folder structure
 

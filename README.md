@@ -2,8 +2,8 @@
 
 # segmentator_processing_scripts
 
-This repository hosts the code used to process the data for the Segmentator paper.
-
+This repository hosts code for the analysis of the following paper:
+(A scalable method to improve gray matter segmentation at ultra high field MRI)[https://www.biorxiv.org/content/early/2018/01/10/245738]
 
 ## Analysis steps
 Follow the following steps for the analysis
@@ -11,31 +11,49 @@ Follow the following steps for the analysis
 ### Set up the environment
 ```
 # set parent path
-parent_path="/home/user/segmentator/"
-export parent_path
+segm_path="/home/user/segmentator"
+export segm_path
 
 # create folders for code, data and analysis
-mkdir -p ${parent_path}/code
-mkdir -p ${parent_path}/data
-mkdir -p ${parent_path}/analysis
+mkdir -p ${segm_path}/code
+mkdir -p ${segm_path}/data
+mkdir -p ${segm_path}/analysis
 
 # create aliases for MATLAB and evalseg
 
 ```
 
-If this needs to be repeated at a later stage, run 
+If this needs to be repeated at a later stage, run
 
 
 ### Download code and data
 The data is provided in BIDS format.
 Code and data can be downloaded by running:
 ```
-wget -P ${parent_path}/code/ "https://github.com/MSchnei/segmentator_processing_scripts/archive/master.zip"
-wget -P ${parent_path}/data/ "https://zenodo.org/record/1117859/files/segmentator_shared_data.zip"
-```
-### Create folder structure for analysis
+# download code and data
+wget -P ${segm_path}/code/ "https://github.com/MSchnei/segmentator_processing_scripts/archive/master.zip"
+wget -P ${segm_path}/data/ "https://zenodo.org/record/1117859/files/segmentator_shared_data.zip"
 
-### Remap from BIDS fromat to analysis folder structure
+# unzip the downloaded folders
+unzip ${segm_path}/code/master.zip -j -d ${segm_path}/code/
+unzip ${segm_path}/data/segmentator_shared_data.zip -j -d ${segm_path}/data/
+
+# remove zipped folders
+rm -rf ${segm_path}/code/master.zip
+rm -rf ${segm_path}/data/segmentator_shared_data.zip
+
+```
+
+### Create folder structure for analysis
+```
+${segm_path}/code/segmentator_processing_scripts/MPRAGE/b_00_create_directory_tree_mprage.sh
+
+
+
+
+
+```
+### Remap from BIDS format to analysis folder structure
 
 
 
@@ -45,8 +63,8 @@ The directory tree can be obtained by running the following two commands for the
 MPRAGE and MP2RAGE data analysis, respectively:
 
 ```
-bash ${parent_path}/code/b_00_create_directory_tree_mprage.sh
-bash ${parent_path}/code/b_00_create_directory_tree_mp2rage.sh
+bash ${segm_path}/code/b_00_create_directory_tree_mprage.sh
+bash ${segm_path}/code/b_00_create_directory_tree_mp2rage.sh
 ```
 
 This should result in the following folder tree for the MPRAGE analysis:

@@ -43,7 +43,7 @@ rm -rf ${segm_path}/code/master.zip
 rm -rf ${segm_path}/data/segmentator_shared_data.zip
 
 # remove in-between folders
-mv ${segm_path}/code/segmentator_processing_scripts-master/* ../
+mv ${segm_path}/code/segmentator_processing_scripts-master/* ${segm_path}/code/
 rm -rf ${segm_path}/code/segmentator_processing_scripts-master/
 ```
 

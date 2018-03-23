@@ -15,8 +15,8 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # directory:
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
-codedirectory="/home/marian/gdrive/temp_segmentator_paper_data/code"
+parent_path="${segm_path}/analysis/MPRAGE"
+codedirectory="${segm_path}/code"
 # Go to input directory
 cd ${codedirectory}
 
@@ -35,10 +35,10 @@ for (( i=0; i<${subjLen}; i++ )); do
   print="----- Subj ${subj} fast -----"
   echo ${print}
   command="python rgb_to_v1v2_cmdlne.py "
-  command+="${parentpath}/${subj}/derived/04_composition/fast_T1_PD_T2s/${subj}_trio_restore_1.nii.gz "
-  command+="${parentpath}/${subj}/derived/04_composition/fast_T1_PD_T2s/${subj}_trio_restore_2.nii.gz "
-  command+="${parentpath}/${subj}/derived/04_composition/fast_T1_PD_T2s/${subj}_trio_restore_3.nii.gz "
-  command+="${parentpath}/${subj}/derived/02_masks/brain_mask_nosub.nii.gz"
+  command+="${parent_path}/${subj}/derived/04_composition/fast_T1_PD_T2s/${subj}_trio_restore_1.nii.gz "
+  command+="${parent_path}/${subj}/derived/04_composition/fast_T1_PD_T2s/${subj}_trio_restore_2.nii.gz "
+  command+="${parent_path}/${subj}/derived/04_composition/fast_T1_PD_T2s/${subj}_trio_restore_3.nii.gz "
+  command+="${parent_path}/${subj}/derived/02_masks/brain_mask_nosub.nii.gz"
   echo ${command}
   ${command}
 done

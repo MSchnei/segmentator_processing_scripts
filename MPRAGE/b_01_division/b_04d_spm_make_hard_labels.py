@@ -17,7 +17,7 @@ import os
 import numpy as np
 from nibabel import load, save, Nifti1Image
 
-parentpath = "/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
+parent_path = str(os.environ['segm_path']) + "/analysis/MPRAGE"
 
 lsSubj = ["S02", "S03", "S05", "S06", "S07"]
 varNrInputs = 6
@@ -27,7 +27,7 @@ for subj in lsSubj:
     # %% load all files and put them in list
     data = []
     for ind in range(0, varNrInputs):
-        filename = (parentpath + "/" + subj +
+        filename = (parent_path + "/" + subj +
                     "/derived/03_division/spm/c" + str(ind+1) + subj +
                     "_T1wDivPD.nii")
         nii = load(filename)
@@ -40,7 +40,7 @@ for subj in lsSubj:
 
     # %% assign 1 if that tissue class had highest prob in the voxel, save
     for ind in range(0, varNrInputs):
-        filename = (parentpath + "/" + subj +
+        filename = (parent_path + "/" + subj +
                     "/derived/03_division/spm/c" + str(ind+1) + subj +
                     "_T1wDivPD.nii")
         nii = load(filename)
@@ -51,4 +51,5 @@ for subj in lsSubj:
         out = Nifti1Image(aryTemp, header=nii.header, affine=nii.affine)
         save(out, basename + "_max.nii.gz")
         os.remove(filename)
-        print "... changed"
+        print(filename)
+        print("... changed")

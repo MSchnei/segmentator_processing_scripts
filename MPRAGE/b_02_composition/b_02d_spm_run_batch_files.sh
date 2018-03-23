@@ -11,7 +11,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
+parent_path="${segm_path}/analysis/MPRAGE"
 
 # list all subject names
 declare -a app=(
@@ -26,7 +26,7 @@ declare -a app=(
 subjLen=${#app[@]}
 for (( i=0; i<${subjLen}; i++ )); do
 	subj=${app[i]}
-	pathTextFile="${parentpath}/${subj}/derived/04_composition/spm_T1_PD_T2s/spm_comp.m"
+	pathTextFile="${parent_path}/${subj}/derived/04_composition/spm_T1_PD_T2s/spm_comp.m"
 	# run SPM batch script
 	command="MATLAB -nodisplay -nodesktop -nosplash -r run('${pathTextFile}'); exit;"
 	echo "${command}"

@@ -17,12 +17,12 @@ from nibabel import load, save, Nifti1Image
 
 """Load Data"""
 
-parentpath = "/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
+parent_path = str(os.environ['segm_path']) + "/analysis/MPRAGE"
 lsSubj = ["S02", "S03", "S05", "S06", "S07"]
 
 for subj in lsSubj:
 
-    path = glob.glob(parentpath + "/" + subj + "/derived/01_ground_truth/" +
+    path = glob.glob(parent_path + "/" + subj + "/derived/01_ground_truth/" +
                      subj + "_gm_0?.nii.gz")[0]
     nii = load(path)
     basename = nii.get_filename().split(os.extsep, 1)[0]

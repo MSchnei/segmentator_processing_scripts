@@ -11,7 +11,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
+parent_path="${segm_path}/analysis/MPRAGE"
 
 # list all subject names
 declare -a app=(
@@ -27,14 +27,14 @@ subjLen=${#app[@]}
 for (( i=0; i<${subjLen}; i++ )); do
   subj=${app[i]}
 	# copy gm file into GM directory
-	source="${parentpath}/${subj}/derived/03_division/spm/c1${subj}_T1wDivPD_max"
-	destination="${parentpath}/${subj}/derived/05_gm/${subj}_division_spm_gm"
+	source="${parent_path}/${subj}/derived/03_division/spm/c1${subj}_T1wDivPD_max"
+	destination="${parent_path}/${subj}/derived/05_gm/${subj}_division_spm_gm"
 	command="cp ${source}.nii.gz ${destination}_unmsk.nii.gz"
 	echo "${command}"
 	${command}
 
 	# mask with the nosub mask
-	mask="${parentpath}/${subj}/derived/02_masks/spm_brain_mask_open_nosub"
+	mask="${parent_path}/${subj}/derived/02_masks/spm_brain_mask_open_nosub"
 	command="fslmaths ${destination}_unmsk -mas ${mask}  ${destination}"
 	echo "${command}"
 	${command}

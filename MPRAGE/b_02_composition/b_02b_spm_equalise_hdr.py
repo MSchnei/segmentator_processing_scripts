@@ -20,7 +20,7 @@ Written by: Marian Schneider, Faruk Gulban
 import os
 from nibabel import load, save, Nifti1Image
 
-parentpath = "/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
+parent_path = str(os.environ['segm_path']) + "/analysis/MPRAGE"
 
 lsSubj = ["S02", "S03", "S05", "S06", "S07"]
 lsContr = ["T1w", "PD", "T2s"]
@@ -28,7 +28,7 @@ lsContr = ["T1w", "PD", "T2s"]
 #
 for subj in lsSubj:
     for ind, contr in enumerate(lsContr):
-        filename = (parentpath + "/" + subj +
+        filename = (parent_path + "/" + subj +
                     "/derived/04_composition/spm_T1_PD_T2s/" + subj + "_" +
                     contr + ".nii")
         print filename

@@ -17,7 +17,7 @@ from nibabel import load, save, Nifti1Image
 
 """Load Data"""
 
-parentpath = "/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
+parent_path = str(os.environ['segm_path']) + "/analysis/MPRAGE"
 lsSubj = ["S02", "S03", "S05", "S06", "S07"]
 lsGM = ["_division_fast_gm", "_division_fast_gm_gramag",
         "_division_fast_gm_simplex", "_division_spm_gm",
@@ -25,7 +25,7 @@ lsGM = ["_division_fast_gm", "_division_fast_gm_gramag",
 
 for subj in lsSubj:
     for gm in lsGM:
-        path = parentpath + "/" + subj + "/derived/05_gm/" + subj + gm
+        path = parent_path + "/" + subj + "/derived/05_gm/" + subj + gm
         nii = load(path + ".nii.gz")
         basename = nii.get_filename().split(os.extsep, 1)[0]
         dirname = os.path.dirname(nii.get_filename())

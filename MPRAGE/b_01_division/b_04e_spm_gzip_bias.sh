@@ -11,7 +11,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
+parent_path="${segm_path}/analysis/MPRAGE"
 
 # list all subject names
 declare -a app=(
@@ -26,7 +26,7 @@ declare -a app=(
 subjLen=${#app[@]}
 for (( i=0; i<${subjLen}; i++ )); do
   subj=${app[i]}
-	output="${parentpath}/${subj}/derived/03_division/spm/m${subj}_T1wDivPD.nii"
+	output="${parent_path}/${subj}/derived/03_division/spm/m${subj}_T1wDivPD.nii"
 	# gzip
 	command="gzip ${output}"
 	echo "${command}"

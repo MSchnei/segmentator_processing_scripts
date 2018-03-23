@@ -12,7 +12,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
+parent_path="${segm_path}/analysis/MPRAGE"
 
 # list all subject names
 declare -a app=(
@@ -28,9 +28,9 @@ subjLen=${#app[@]}
 for (( i=0; i<${subjLen}; i++ )); do
   subj=${app[i]}
   # mask spm gm with segmentator gradient magnitude ncut brain mask
-	input="${parentpath}/${subj}/derived/05_gm/${subj}_division_fast_gm"
-	mask="${parentpath}/${subj}/derived/04_composition/fast_T1_PD_T2s/ilr_coord_1_labels_0"
-	output="${parentpath}/${subj}/derived/05_gm/${subj}_division_fast_gm_simplex"
+	input="${parent_path}/${subj}/derived/05_gm/${subj}_division_fast_gm"
+	mask="${parent_path}/${subj}/derived/04_composition/fast_T1_PD_T2s/ilr_coord_1_labels_0"
+	output="${parent_path}/${subj}/derived/05_gm/${subj}_division_fast_gm_simplex"
 	command="fslmaths ${input} -mas ${mask} ${output}"
 	echo "${command}"
 	${command}

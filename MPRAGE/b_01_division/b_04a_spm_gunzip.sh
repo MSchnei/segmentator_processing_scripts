@@ -11,7 +11,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
+parent_path="${segm_path}/analysis/MPRAGE"
 
 # list all subject names
 declare -a app=(
@@ -28,8 +28,8 @@ for (( i=0; i<${subjLen}; i++ )); do
 	# derive particular subject name
   subj=${app[i]}
 	# set input and output names for copying operation
-  input="${parentpath}/${subj}/derived/03_division/${subj}_T1wDivPD.nii.gz"
-	output="${parentpath}/${subj}/derived/03_division/spm/${subj}_T1wDivPD.nii.gz"
+  input="${parent_path}/${subj}/derived/03_division/${subj}_T1wDivPD.nii.gz"
+	output="${parent_path}/${subj}/derived/03_division/spm/${subj}_T1wDivPD.nii.gz"
 	# copy gz file into SPM directory
 	command="cp ${input} ${output}"
 	echo "${command}"

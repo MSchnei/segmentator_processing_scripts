@@ -14,7 +14,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
+parent_path="${segm_path}/analysis/MPRAGE"
 
 declare -a arr_t1=(
   "S02"
@@ -40,9 +40,9 @@ echo "====================="
 tLen=${#arr_t1[@]}
 for (( i=0; i<${tLen}; i++ )); do
   subj=${arr_t1[i]}
-  input_name1="${parentpath}/${subj}/derived/04_composition/fast_T1_PD_T2s/ilr_coord_1.nii.gz"
-  input_name2="${parentpath}/${subj}/derived/04_composition/fast_T1_PD_T2s/ilr_coord_2.nii.gz"
-  input_ncut="${parentpath}/${subj}/derived/04_composition/fast_T1_PD_T2s/ilr_coord_1${ncut_base}"
+  input_name1="${parent_path}/${subj}/derived/04_composition/fast_T1_PD_T2s/ilr_coord_1.nii.gz"
+  input_name2="${parent_path}/${subj}/derived/04_composition/fast_T1_PD_T2s/ilr_coord_2.nii.gz"
+  input_ncut="${parent_path}/${subj}/derived/04_composition/fast_T1_PD_T2s/ilr_coord_1${ncut_base}"
 
   command="segmentator $input_name1 --ncut $input_ncut "
   command+="--percmin ${percmin} --percmax ${percmax} --scale ${scale} "

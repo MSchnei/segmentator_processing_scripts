@@ -56,8 +56,11 @@ bash ${segm_path}/code/MPRAGE/b_00a_create_directory_tree.sh
 bash ${segm_path}/code/MP2RAGE/b_00a_create_directory_tree.sh
 ```
 ### Remap from BIDS format to analysis folder structure
-
-
+Files can be transferred from BIDS format to the assumed structure by
+```
+bash ${segm_path}/code/MPRAGE/b_00b_map_BIDS_to_analysis.sh
+bash ${segm_path}/code/MP2RAGE/b_00b_map_BIDS_to_analysis.sh
+```
 
 ## Notes
 The following folder tree is necessary for the MPRAGE analysis:

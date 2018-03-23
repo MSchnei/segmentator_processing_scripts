@@ -12,7 +12,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
+parent_path="${segm_path}/analysis/MPRAGE"
 
 # list all subject names
 declare -a app=(
@@ -31,21 +31,16 @@ for (( i=0; i<${subjLen}; i++ )); do
 	# call to fslmaths
   command="fslmaths "
 	# specify path to T1w image
-  command+="${parentpath}/${subj}/source/${subj}_T1w "
+  command+="${parent_path}/${subj}/source/${subj}_T1w "
 	# divide
   command+="-div "
 	# set path to Pd images
 	# consider that some subject's PDs needed coregistration to T1w images
-  if [[ "S06 S07" == *"$subj"* ]]
-  then
-    command+="${parentpath}/${subj}/source/${subj}_PD_coreg "
-  else
-    command+="${parentpath}/${subj}/source/${subj}_PD "
-  fi
+  command+="${parent_path}/${subj}/source/${subj}_PD "
 	# multiply by 500
   command+="-mul 500 "
 	# specify output name
-  command+="${parentpath}/${subj}/derived/03_division/${subj}_T1wDivPD"
+  command+="${parent_path}/${subj}/derived/03_division/${subj}_T1wDivPD"
   echo "${command}"
   ${command}
 done

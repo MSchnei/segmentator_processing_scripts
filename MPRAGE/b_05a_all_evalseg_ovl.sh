@@ -12,10 +12,10 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set path to folder with the validation data
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
+parent_path="${segm_path}/analysis/MPRAGE"
 
 # set path to evaluate segmentation (visceral project) executable
-evalseg='/home/marian/EvaluateSegmentation/EvaluateSegmentation'
+evalseg=${evalseg_path}
 
 # specify which segmentation results should be evaluated
 declare -a programme=(
@@ -50,15 +50,15 @@ for (( k=0; k<${switchLen}; k++ )); do
 	  # deduce subject name
 	  subj=${app[j]}
 	  # deduce path name for ground truth
-	  truth="${parentpath}/${subj}/derived/01_ground_truth/${subj}_gm_0?.nii.gz"
+	  truth="${parent_path}/${subj}/derived/01_ground_truth/${subj}_gm_0?.nii.gz"
 	  # loop throuh different segmentation results
 	  for (( i=0; i<${tLen}; i++ )); do
 	    # deduce name for segmentation result file
-	    segm="${parentpath}/${subj}/derived/05_gm/${subj}_division_${switch}_gm${res[i]}.nii.gz"
+	    segm="${parent_path}/${subj}/derived/05_gm/${subj}_division_${switch}_gm${res[i]}.nii.gz"
 	    # evaluate the segmentation
 	    command="${evalseg} ${truth} ${segm} "
 	    command+="-use DICE,SNSVTY,SPCFTY,ACURCY,PRCISON "
-	    command+="-xml ${parentpath}/${subj}/derived/07_evaluation/${switch}${res[i]}_ovl.xml"
+	    command+="-xml ${parent_path}/${subj}/derived/07_evaluation/${switch}${res[i]}_ovl.xml"
 	    echo "${command}"
 	    ${command}
 	  done

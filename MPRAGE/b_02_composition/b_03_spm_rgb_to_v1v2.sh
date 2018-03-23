@@ -15,8 +15,8 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # directory:
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
-codedirectory="/home/marian/gdrive/temp_segmentator_paper_data/code"
+parent_path="${segm_path}/analysis/MPRAGE"
+codedirectory="${segm_path}/code"
 # Go to input directory
 cd ${codedirectory}
 
@@ -35,10 +35,10 @@ for (( i=0; i<${subjLen}; i++ )); do
   print="----- Subj ${subj} SPM -----"
   echo ${print}
   command="python rgb_to_v1v2_cmdlne.py "
-  command+="${parentpath}/${subj}/derived/04_composition/spm_T1_PD_T2s/m${subj}_T1w_eq.nii.gz "
-  command+="${parentpath}/${subj}/derived/04_composition/spm_T1_PD_T2s/m${subj}_PD_eq.nii.gz "
-  command+="${parentpath}/${subj}/derived/04_composition/spm_T1_PD_T2s/m${subj}_T2s_eq.nii.gz "
-  command+="${parentpath}/${subj}/derived/02_masks/spm_brain_mask_open_nosub.nii.gz"
+  command+="${parent_path}/${subj}/derived/04_composition/spm_T1_PD_T2s/m${subj}_T1w_eq.nii.gz "
+  command+="${parent_path}/${subj}/derived/04_composition/spm_T1_PD_T2s/m${subj}_PD_eq.nii.gz "
+  command+="${parent_path}/${subj}/derived/04_composition/spm_T1_PD_T2s/m${subj}_T2s_eq.nii.gz "
+  command+="${parent_path}/${subj}/derived/02_masks/spm_brain_mask_open_nosub.nii.gz"
   echo ${command}
   ${command}
 done

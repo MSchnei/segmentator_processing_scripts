@@ -11,7 +11,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
+parent_path="${segm_path}/analysis/MPRAGE"
 
 # list all subject names
 declare -a app=(
@@ -40,7 +40,7 @@ for (( i=0; i<${subjLen}; i++ )); do
 	for (( j=0; j<${contrLen}; j++ )); do
 		contr=${contrast[j]}
 		# get relevant filename
-		output="${parentpath}/${subj}/derived/04_composition/spm_T1_PD_T2s/m${subj}_${contr}_eq.nii"
+		output="${parent_path}/${subj}/derived/04_composition/spm_T1_PD_T2s/m${subj}_${contr}_eq.nii"
 		# gzip
 		command="gzip ${output}"
 		echo "${command}"

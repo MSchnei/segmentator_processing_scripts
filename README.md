@@ -28,8 +28,7 @@ If this needs to be repeated at a later stage, run
 
 
 ### Download code and data
-The data is provided in BIDS format.
-Code and data can be downloaded by running:
+The data is provided in BIDS format. Code and data can be downloaded by running:
 ```
 # download code and data
 wget -P ${segm_path}/code/ "https://github.com/MSchnei/segmentator_processing_scripts/archive/master.zip"
@@ -43,29 +42,25 @@ unzip ${segm_path}/data/segmentator_shared_data.zip -d ${segm_path}/data/
 rm -rf ${segm_path}/code/master.zip
 rm -rf ${segm_path}/data/segmentator_shared_data.zip
 
+# remove in-between folders
+mv ${segm_path}/code/segmentator_processing_scripts-master/* ../
+rm -rf ${segm_path}/code/segmentator_processing_scripts-master/
 ```
 
 ### Create folder structure for analysis
+To run the analysis, a particular directory tree is assumed.
+The directory tree can be obtained by running the following two commands for the
+MPRAGE and MP2RAGE data analysis, respectively:
 ```
-# Run the following lines to create the directory tree necessary for the analysis:
-bash ${segm_path}/code/segmentator_processing_scripts-master/MPRAGE/b_00_create_directory_tree_mprage.sh
-bash ${segm_path}/code/segmentator_processing_scripts-master/MP2RAGE/b_00_create_directory_tree_mp2rage.sh
+bash ${segm_path}/code/MPRAGE/b_00_create_directory_tree_mprage.sh
+bash ${segm_path}/code/MP2RAGE/b_00_create_directory_tree_mp2rage.sh
 ```
 ### Remap from BIDS format to analysis folder structure
 
 
 
 ## Notes
-To run the analysis, a particular directory tree is assumed.
-The directory tree can be obtained by running the following two commands for the
-MPRAGE and MP2RAGE data analysis, respectively:
-
-```
-bash ${segm_path}/code/b_00_create_directory_tree_mprage.sh
-bash ${segm_path}/code/b_00_create_directory_tree_mp2rage.sh
-```
-
-This should result in the following folder tree for the MPRAGE analysis:
+The following folder tree is necessary for the MPRAGE analysis:
 ```
 /home/user/segmentator/analysis/MPRAGE/
 ├── S02

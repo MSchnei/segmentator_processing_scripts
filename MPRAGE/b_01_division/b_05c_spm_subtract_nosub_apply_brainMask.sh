@@ -35,8 +35,13 @@ for (( i=0; i<${subjLen}; i++ )); do
 	# brain mask and called it with _open suffix
 	brainmask="${parent_path}/${subj}/derived/03_division/spm/spm_brain_mask_open"
 
-	# combine brain and no submask
+  # create nosub mask
 	submask="${parent_path}/${subj}/derived/02_masks/nosub.nii.gz"
+	command="fslmaths ${parent_path}/${subj}/derived/02_masks/brain_mask_nosub.nii.gz -binv ${submask}"
+	echo "${command}"
+	${command}
+
+	# combine brain and no submask
 	brainsubmask="${parent_path}/${subj}/derived/03_division/spm/spm_brain_mask_open_nosub"
 	command="fslmaths ${submask} -binv -mul ${brainmask} ${brainsubmask}"
 	echo "${command}"

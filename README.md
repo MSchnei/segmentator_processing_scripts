@@ -37,8 +37,6 @@ mkdir -p ${segm_path}/analysis
 
 ```
 
-If this needs to be repeated at a later stage, run ...
-
 ### Set up virtual environment for segmentator
 ```
 # create conda environment
@@ -69,7 +67,7 @@ The data is provided in BIDS format. Code and data can be downloaded by running:
 ```
 # download code and data
 wget -P ${segm_path}/code/ "https://github.com/MSchnei/segmentator_processing_scripts/archive/master.zip"
-wget -P ${segm_path}/data/ "https://zenodo.org/record/1117859/files/segmentator_shared_data.zip"
+wget -P ${segm_path}/data/ "https://zenodo.org/record/1206163/files/shared_data.zip"
 
 # unzip the downloaded folders
 unzip ${segm_path}/code/master.zip -d ${segm_path}/code/

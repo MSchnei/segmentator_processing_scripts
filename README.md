@@ -6,6 +6,19 @@ This repository hosts code for the analysis of the following paper:
 
 [A scalable method to improve gray matter segmentation at ultra high field MRI](https://www.biorxiv.org/content/early/2018/01/10/245738)
 
+
+## Core dependencies
+**[Python 2.7](https://www.python.org/download/releases/2.7/)**
+
+| Package                                   | Tested version |
+|-------------------------------------------|----------------|
+| [NumPy](http://www.numpy.org/)            | 1.13.1         |
+| [Scipy](https://www.scipy.org/)           | 0.19.1         |
+| [NiBabel](http://nipy.org/nibabel/)       | 2.1.0          |
+| [matplotlib](https://matplotlib.org/)     | 1.5.3          |
+| [scikit-image](http://scikit-image.org)   | 0.13.1         |
+
+
 ## Analysis steps
 Follow the following steps for the analysis
 
@@ -26,6 +39,30 @@ mkdir -p ${segm_path}/analysis
 
 If this needs to be repeated at a later stage, run ...
 
+### Set up virtual environment for segmentator
+```
+# create conda environment
+conda create --name env_segm_paper python=2.7
+source activate env_segm_paper
+
+# clone and install segmentator software
+cd ${segm_path}/code
+git clone https://github.com/ofgulban/segmentator.git
+cd segmentator/
+git fetch
+git checkout paper
+conda install pip
+pip install -r requirements.txt
+python setup.py install
+
+# install special scikit-image dependency for n-cut functionality
+wget -P ${segm_path}/code/ "https://github.com/ofgulban/scikit-image/archive/segmentator_dependency.zip"
+unzip ${segm_path}/code/segmentator_dependency.zip -d ${segm_path}/code/
+rm -rf ${segm_path}/code/segmentator_dependency.zip
+cd ${segm_path}/code/scikit-image-segmentator_dependency
+pip install -r requirements.txt
+python setup.py install
+```
 
 ### Download code and data
 The data is provided in BIDS format. Code and data can be downloaded by running:

@@ -22,9 +22,9 @@ declare -a subjects=(
 data_path="${segm_path}/data"
 # deduce path to analysis folder
 analysis_path="${segm_path}/analysis"
-# deduce path to mprage data folder
+# deduce path to mp2rage data folder
 mp2rage_data_folder="${data_path}/shared_data/data_mp2rage"
-# deduce path to mprage analysis folder
+# deduce path to mp2rage analysis folder
 mp2rage_analysis_folder="${analysis_path}/MP2RAGE"
 # deduce number of subjects
 subjLen=${#subjects[@]}
@@ -41,9 +41,9 @@ for (( j=0; j<${subjLen}; j++ )); do
   cp ${mp2rage_data_folder}/sub-${subj}/anat/sub-${subj}_me_gre_defaced.nii.gz ${mp2rage_analysis_folder}/S${subj}/source/S${subj}_me_gre.nii.gz
 
   # copy masks
-  cp ${mprage_data_folder}/derivatives/sub-${subj}/masks/sub-${subj}_brain_mask.nii.gz ${mprage_analysis_folder}/S${subj}/derived/02_masks/brain_mask.nii.gz
-  cp ${mprage_data_folder}/derivatives/sub-${subj}/masks/sub-${subj}_brain_mask_nosub.nii.gz ${mprage_analysis_folder}/S${subj}/derived/02_masks/brain_mask_nosub.nii.gz
-  cp ${mprage_data_folder}/derivatives/sub-${subj}/masks/sub-${subj}_artifact_mask_T2star.nii.gz ${mprage_analysis_folder}/S${subj}/derived/02_masks/artifact_mask.nii.gz
+  cp ${mp2rage_data_folder}/derivatives/sub-${subj}/masks/sub-${subj}_brain_mask.nii.gz ${mp2rage_analysis_folder}/S${subj}/derived/02_masks/brain_mask.nii.gz
+  cp ${mp2rage_data_folder}/derivatives/sub-${subj}/masks/sub-${subj}_brain_mask_nosub.nii.gz ${mp2rage_analysis_folder}/S${subj}/derived/02_masks/brain_mask_nosub.nii.gz
+  cp ${mp2rage_data_folder}/derivatives/sub-${subj}/masks/sub-${subj}_artifact_mask_T2star.nii.gz ${mp2rage_analysis_folder}/S${subj}/derived/02_masks/artifact_mask.nii.gz
 
   # copy ground truth files
   cp ${mp2rage_data_folder}/derivatives/sub-${subj}/ground_truth/sub-${subj}_gm_v*.nii.gz ${mp2rage_analysis_folder}/S${subj}/derived/01_ground_truth/S${subj}_gm_01.nii.gz

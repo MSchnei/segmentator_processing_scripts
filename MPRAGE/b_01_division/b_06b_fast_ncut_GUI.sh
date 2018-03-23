@@ -32,7 +32,7 @@ cbar_init="2.0"
 cbar_max="5.0"
 
 # set path to ncut.npy file
-ncut_base="_division_restore_volHist_pMax97pt5_pMin2pt5_sc400_ncut_sp2500_c2.npy"
+ncut_base="_division_restore_volHist_pMax97pt5_pMin2pt5_sc400_ncut_sp2500_c2pt0.npy"
 
 echo "====================="
 echo "Batch Segmentator GUI"

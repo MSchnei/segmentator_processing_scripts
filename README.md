@@ -3,7 +3,7 @@
 # segmentator_processing_scripts
 
 This repository hosts code for the analysis of the following paper:
-(A scalable method to improve gray matter segmentation at ultra high field MRI)[https://www.biorxiv.org/content/early/2018/01/10/245738]
+[A scalable method to improve gray matter segmentation at ultra high field MRI](https://www.biorxiv.org/content/early/2018/01/10/245738)
 
 ## Analysis steps
 Follow the following steps for the analysis

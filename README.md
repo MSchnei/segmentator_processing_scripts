@@ -14,7 +14,7 @@ Follow the following steps for the analysis
 ### Download the data
 The data is provided in BIDS format. It can be downloaded by running
 ```
-wget  -O /home/user/segmentator/data "https://zenodo.org/record/1117859/files/segmentator_shared_data.zip"
+wget -P /home/user/segmentator/data "https://zenodo.org/record/1117859/files/segmentator_shared_data.zip"
 ```
 ### Create folder structure for analysis
 

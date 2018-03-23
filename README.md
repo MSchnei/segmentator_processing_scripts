@@ -52,8 +52,8 @@ To run the analysis, a particular directory tree is assumed.
 The directory tree can be obtained by running the following two commands for the
 MPRAGE and MP2RAGE data analysis, respectively:
 ```
-bash ${segm_path}/code/MPRAGE/b_00_create_directory_tree_mprage.sh
-bash ${segm_path}/code/MP2RAGE/b_00_create_directory_tree_mp2rage.sh
+bash ${segm_path}/code/MPRAGE/b_00a_create_directory_tree.sh
+bash ${segm_path}/code/MP2RAGE/b_00a_create_directory_tree.sh
 ```
 ### Remap from BIDS format to analysis folder structure
 

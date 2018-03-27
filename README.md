@@ -29,9 +29,8 @@ segm_path="/home/user/segmentator"
 export segm_path
 
 # activate virtual environment
+# (Note: If the analysis is performed for the first time,1 \n first create the virtual environment by following the steps in the sections below before activating it.)
 source activate env_segm_paper
-
-# Note: If the analysis is performed for the first time, first create the virtual environment by following the steps in the sections below before activating it.
 ```
 
 ### First time use: Set up folders and virtual environment for segmentator
@@ -41,7 +40,7 @@ mkdir -p ${segm_path}/code
 mkdir -p ${segm_path}/data
 mkdir -p ${segm_path}/analysis
 
-# create aliases for MATLAB and evalseg
+# create aliases for MATLAB and evalseg and SPM tissue class file
 ...
 
 # create conda environment

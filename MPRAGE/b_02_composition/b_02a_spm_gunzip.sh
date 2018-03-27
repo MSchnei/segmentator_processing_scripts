@@ -42,12 +42,7 @@ for (( i=0; i<${subjLen}; i++ )); do
 		# loop through contrasts
 		for (( j=0; j<${contrLen}; j++ )); do
 			contr=${contrast[j]}
-			if [[ "S06 S07" == *"$subj"* ]] && [[ "PD T2s" == *"$contr"* ]]
-		  then
-		    input="${parent_path}/${subj}/source/${subj}_${contr}_coreg.nii.gz "
-		  else
-		    input="${parent_path}/${subj}/source/${subj}_${contr}.nii.gz "
-		  fi
+		  input="${parent_path}/${subj}/source/${subj}_${contr}.nii.gz "
 			output="${parent_path}/${subj}/derived/04_composition/spm_T1_PD_T2s/${subj}_${contr}.nii.gz"
 			# copy gz file into SPM directory
 			command="cp ${input} ${output}"

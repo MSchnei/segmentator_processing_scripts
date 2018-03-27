@@ -104,7 +104,6 @@ pri = tet.ilr_transformation(tet.closure(pri))
 plt.scatter(pri[0:100, 0], pri[0:100, 1], color='red', s=3)
 plt.scatter(pri[100:200, 0], pri[100:200, 1], color='green', s=3)
 plt.scatter(pri[200:300, 0], pri[200:300, 1], color='blue', s=3)
-plt.show()
 
 print('Exporting ilr coordinates...')
 # ilr transformation for nifti output (also considering unplotted data)

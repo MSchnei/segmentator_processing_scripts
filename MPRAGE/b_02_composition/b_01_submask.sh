@@ -40,6 +40,7 @@ for (( i=0; i<${subjLen}; i++ )); do
   echo "${command1}"
   ${command1}
 	# PDw
+	command2="fslmaths "
 	command2+="${parent_path}/${subj}/source/${subj}_PD "
   command2+="-mas "
   command2+="${parent_path}/${subj}/derived/02_masks/brain_mask_nosub "
@@ -48,12 +49,7 @@ for (( i=0; i<${subjLen}; i++ )); do
   ${command2}
 	# T2s
   command3="fslmaths "
-	if [[ "S06 S07" == *"$subj"* ]]
-	then
-		command3+="${parent_path}/${subj}/source/${subj}_T2s_coreg "
-	else
-		command3+="${parent_path}/${subj}/source/${subj}_T2s "
-	fi
+	command3+="${parent_path}/${subj}/source/${subj}_T2s "
   command3+="-mas "
   command3+="${parent_path}/${subj}/derived/02_masks/brain_mask_nosub "
   command3+="${parent_path}/${subj}/derived/04_composition/${subj}_T2s_bet_nosub"

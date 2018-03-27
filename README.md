@@ -64,6 +64,9 @@ rm -rf ${segm_path}/code/segmentator_dependency.zip
 cd ${segm_path}/code/scikit-image-segmentator_dependency
 pip install -r requirements.txt
 python setup.py install
+
+# install compoda package
+pip install compoda==0.3.0
 ```
 
 ### Download code and data

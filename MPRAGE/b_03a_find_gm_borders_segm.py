@@ -43,5 +43,4 @@ for subj in lsSubj:
         # save as nifti
         out = Nifti1Image(data, header=nii.header, affine=nii.affine)
         save(out, basename + "_borders.nii.gz")
-
-        print path + '... done.'
+        print(basename + "_borders.nii.gz" + ' ... done.')

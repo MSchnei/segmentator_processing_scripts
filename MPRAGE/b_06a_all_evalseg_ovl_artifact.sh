@@ -16,7 +16,7 @@
 parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE"
 
 # set path to evaluate segmentation (visceral project) executable
-evalseg='/home/marian/EvaluateSegmentation/EvaluateSegmentation'
+evalseg=${evalseg_path}
 
 # specify which segmentation results should be evaluated
 declare -a programme=(

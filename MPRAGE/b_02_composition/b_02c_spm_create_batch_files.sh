@@ -13,7 +13,7 @@
 
 # set parent path
 parent_path="${segm_path}/analysis/MPRAGE"
-tissuepath="/home/marian/Documents/spm12/tpm/TPM.nii"
+tissuepath=${tissue_path}
 
 # list all subject names
 declare -a app=(

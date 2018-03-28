@@ -26,14 +26,14 @@ Follow the following steps for the analysis
 
 Note1: If the analysis is performed for the first time, first create the virtual environment by following the steps in the sections below before activating it.
 
-Note2: In order to reproduce the SPM segmentation pipeline, unfortunately MATLAB and SPM currently still need to be installed. This might be replaced by a docker image in the future. We used MATLAB R2015b in combination with SPM 12.
+Note2: In order to reproduce the SPM segmentation pipeline, unfortunately MATLAB and SPM currently still need to be installed. This might be replaced by a docker image in the future. We used MATLAB R2015b in combination with [SPM 12](http://www.fil.ion.ucl.ac.uk/spm/download/restricted/utopia/dev/spm12_r6472_Linux_R2015a.zip).
 
 **activate virtual environment**
 ```
 source activate env_segm_paper
 ```
 
-**set parent path and evalseg pat**
+**set parent path and evalseg path**
 ```
 segm_path="/home/user/segmentator"
 export segm_path
@@ -93,6 +93,13 @@ python setup.py install
 ```
 pip install compoda==0.3.0
 ```
+
+**install python packages for tables and data frames**
+```
+conda install -c conda-forge xmltodict=0.11.0
+conda install -c anaconda pandas=0.22.0
+conda install -c conda-forge tabulate=0.8.2
+ ```
 
 ### Download code and data
 The data is provided in BIDS format. Code and data can be downloaded by running:

@@ -24,13 +24,26 @@ Follow the following steps for the analysis
 
 ### Set up the environment
 ```
+# Note1: If the analysis is performed for the first time,\ first create the virtual environment by following the steps in the sections below before activating it.
+# Note2: In order to reproduce the SPM segmentation pipeline,\ unfortunately MATLAB and SPM currently still need to be installed. This might be replaced by a docker image in the future. We used MATLAB R2015b in combination with SPM 12.
+
+# activate virtual environment
+source activate env_segm_paper
+
 # set parent path
 segm_path="/home/user/segmentator"
 export segm_path
 
-# activate virtual environment
-# (Note: If the analysis is performed for the first time,1 \n first create the virtual environment by following the steps in the sections below before activating it.)
-source activate env_segm_paper
+# set path to evalseg software
+evalseg_path="/home/usr/EvaluateSegmentation/EvaluateSegmentation"
+export evalseg_path
+
+# create temporary alias for MATLAB and SPM tissue class file
+alias MATLAB="/usr/local/MATLAB/R2015b/bin/glnxa64/MATLAB"
+
+# set path to SPM tissue class file
+tissue_path="/home/usr/spm12/tpm/TPM.nii"
+export tissue_path
 ```
 
 ### First time use: Set up folders and virtual environment for segmentator
@@ -39,9 +52,6 @@ source activate env_segm_paper
 mkdir -p ${segm_path}/code
 mkdir -p ${segm_path}/data
 mkdir -p ${segm_path}/analysis
-
-# create aliases for MATLAB and evalseg and SPM tissue class file
-...
 
 # create conda environment
 conda create --name env_segm_paper python=2.7

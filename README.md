@@ -24,32 +24,29 @@ Follow the following steps for the analysis
 
 ### Set up the environment
 
-Note1: If the analysis is performed for the first time,\ first create the virtual environment by following the steps in the sections below before activating it.
-Note2: In order to reproduce the SPM segmentation pipeline,\ unfortunately MATLAB and SPM currently still need to be installed. This might be replaced by a docker image in the future. We used MATLAB R2015b in combination with SPM 12.
+Note1: If the analysis is performed for the first time, first create the virtual environment by following the steps in the sections below before activating it.
 
-activate virtual environment
+Note2: In order to reproduce the SPM segmentation pipeline, unfortunately MATLAB and SPM currently still need to be installed. This might be replaced by a docker image in the future. We used MATLAB R2015b in combination with SPM 12.
+
+**activate virtual environment**
 ```
 source activate env_segm_paper
 ```
 
-set parent path
+**set parent path and evalseg pat**
 ```
 segm_path="/home/user/segmentator"
 export segm_path
-```
-
-set path to evalseg software
-```
 evalseg_path="/home/usr/EvaluateSegmentation/EvaluateSegmentation"
 export evalseg_path
 ```
 
-create temporary alias for MATLAB and SPM tissue class file
+**create temporary alias for MATLAB**
 ```
 alias MATLAB="/usr/local/MATLAB/R2015b/bin/glnxa64/MATLAB"
 ```
 
-set path to SPM tissue class file
+**set path to SPM tissue class file**
 ```
 tissue_path="/home/usr/spm12/tpm/TPM.nii"
 export tissue_path
@@ -57,20 +54,20 @@ export tissue_path
 
 ### First time use: Set up folders and virtual environment for segmentator
 
-create folders for code, data and analysis
+**create folders for code, data and analysis**
 ```
 mkdir -p ${segm_path}/code
 mkdir -p ${segm_path}/data
 mkdir -p ${segm_path}/analysis
 ```
 
-create conda environment
+**create conda environment**
 ```
 conda create --name env_segm_paper python=2.7
 source activate env_segm_paper
 ```
 
-clone and install segmentator software
+**clone and install segmentator software**
 ```
 cd ${segm_path}/code
 git clone https://github.com/ofgulban/segmentator.git
@@ -82,7 +79,7 @@ pip install -r requirements.txt
 python setup.py install
 ```
 
-install special scikit-image dependency for n-cut functionality
+**install special scikit-image dependency for n-cut functionality**
 ```
 wget -P ${segm_path}/code/ "https://github.com/ofgulban/scikit-image/archive/segmentator_dependency.zip"
 unzip ${segm_path}/code/segmentator_dependency.zip -d ${segm_path}/code/
@@ -92,7 +89,7 @@ pip install -r requirements.txt
 python setup.py install
 ```
 
-install compoda package
+**install compoda package**
 ```
 pip install compoda==0.3.0
 ```
@@ -100,25 +97,25 @@ pip install compoda==0.3.0
 ### Download code and data
 The data is provided in BIDS format. Code and data can be downloaded by running:
 
-download code and data
+**download code and data**
 ```
 wget -P ${segm_path}/code/ "https://github.com/MSchnei/segmentator_processing_scripts/archive/master.zip"
 wget -P ${segm_path}/data/ "https://zenodo.org/record/1206163/files/shared_data.zip"
 ```
 
-unzip the downloaded folders
+**unzip the downloaded folders**
 ```
 unzip ${segm_path}/code/master.zip -d ${segm_path}/code/
 unzip ${segm_path}/data/shared_data.zip -d ${segm_path}/data/
 ```
 
-remove zipped folders
+**remove zipped folders**
 ```
 rm -rf ${segm_path}/code/master.zip
 rm -rf ${segm_path}/data/shared_data.zip
 ```
 
-remove in-between folders
+**remove in-between folders**
 ```
 mv ${segm_path}/code/segmentator_processing_scripts-master/* ${segm_path}/code/
 rm -rf ${segm_path}/code/segmentator_processing_scripts-master/

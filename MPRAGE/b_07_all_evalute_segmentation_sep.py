@@ -27,7 +27,7 @@ from tabulate import tabulate
 
 # %%
 # specify path to the directory
-dirname = '/home/marian/gdrive/temp_segmentator_paper_data/MPRAGE/'
+dirname = "/home/marian/Documents/Testing/segmentator/analysis/MPRAGE"
 # specify whether the fast or the spm table should be produced
 switchList = ['spm', 'fast']  # 'fast' or 'spm'
 # specify subject identifiers

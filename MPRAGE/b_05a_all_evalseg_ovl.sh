@@ -25,7 +25,7 @@ declare -a programme=(
 
 # list all subject names
 declare -a app=(
-				"S02"
+		"S02"
         "S03"
         "S05"
         "S06"

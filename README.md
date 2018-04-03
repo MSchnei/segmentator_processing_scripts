@@ -26,7 +26,7 @@ Follow the following steps for the analysis
 
 Note1: If the analysis is performed for the first time, first create the virtual environment by following the steps in the sections below before activating it.
 
-Note2: In order to reproduce the SPM segmentation pipeline, unfortunately MATLAB and SPM currently still need to be installed. This might be replaced by a docker image in the future. We used MATLAB R2015b in combination with [SPM 12](http://www.fil.ion.ucl.ac.uk/spm/download/restricted/utopia/dev/spm12_r6472_Linux_R2015a.zip).
+Note2: In order to reproduce the SPM segmentation pipeline, unfortunately MATLAB and SPM currently still need to be installed. This might be replaced by a docker image in the future. We used MATLAB R2015b in combination with [SPM 12 r6472](http://www.fil.ion.ucl.ac.uk/spm/download/restricted/utopia/dev/spm12_r6472_Linux_R2015a.zip).
 
 **activate virtual environment**
 ```

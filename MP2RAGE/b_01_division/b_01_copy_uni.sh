@@ -2,7 +2,8 @@
 
 #### Description: Copies uni image that was reoriented by cbs tools
 #### To be set:
-####    -path to parent directory,
+####    -path to reoriented cbs images,
+####	-path to target MP2RAGE analysis folder
 ####    -cbs extensions for reoriented uni images
 ####    -subject names
 #### Input:
@@ -11,34 +12,36 @@
 ####    -copy of uni.nii.gz for all subjects
 #### Written by: Marian Schneider, Faruk Gulban
 
-# set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"
+
+# deduce path to cbs data
+cbs_path="${segm_path}/data/shared_data/data_mp2rage/derivatives"
+# deduce path to mp2rage analysis folder
+mp2rage_analysis_folder="${segm_path}/analysis/MP2RAGE"
 
 # set cbs extensions
 declare -a cbs=(
-	"RoyHaa_110416_S001C001_Ses2_20160411_001_020_mp2rage_iso0_7_iPAT3_mp2rage_iso0_7_iPAT3_UNI_Images_clone_transform"
-	"RoyHaa_260315_S013C001_20150326_001_021_mp2rage_iso0_7_iPAT3_mp2rage_iso0_7_iPAT3_UNI_Images_clone_transform"
-	"RoyHaa_080415_S014C001_20150408_001_021_mp2rage_iso0_7_iPAT3_mp2rage_iso0_7_iPAT3_UNI_Images_clone_transform"
-	"RoyHaa_060515_S019C001_20150506_001_023_mp2rage_iso0_7_iPAT3_mp2rage_iso0_7_iPAT3_UNI_Images_clone_transform"
-								)
+	"sub-001_uni_defaced_clone_transform"
+	"sub-013_uni_defaced_clone_transform"
+	"sub-014_uni_defaced_clone_transform"
+	"sub-019_uni_defaced_clone_transform")
 
 # list all subject names
 declare -a app=(
-				"S001"
-        "S013"
-        "S014"
-        "S019"
+		"001"
+        "013"
+        "014"
+        "019"
                 )
 
 # create division images for all subjects
 subjLen=${#app[@]}
 for (( i=0; i<${subjLen}; i++ )); do
 	# derive particular subject name
-  subj=${app[i]}
+  	subj=${app[i]}
 	ext=${cbs[i]}
-	cbsuni="${parentpath}/${subj}/derived/03_uni/cbs/exp-0000/exp-0000-B/reorient/${ext}.nii.gz"
-	destination="${parentpath}/${subj}/derived/03_uni/${subj}_uni.nii.gz"
-  command="cp ${cbsuni} ${destination}"
-  echo "${command}"
-  ${command}
+	cbsuni="${cbs_path}/sub-${subj}/cbs/exp-0000/exp-0000-B/reorient/${ext}.nii.gz"
+	destination="${mp2rage_analysis_folder}/S${subj}/derived/03_uni/S${subj}_uni.nii.gz"
+  	command="cp ${cbsuni} ${destination}"
+  	echo "${command}"
+  	${command}
 done

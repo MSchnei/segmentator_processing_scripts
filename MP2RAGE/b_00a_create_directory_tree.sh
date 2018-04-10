@@ -43,7 +43,6 @@ for (( j=0; j<${subjLen}; j++ )); do
   mkdir -p ${mp2rage_folder}/${subj}/derived/03_uni/cbs
   mkdir -p ${mp2rage_folder}/${subj}/derived/03_uni/fast
   mkdir -p ${mp2rage_folder}/${subj}/derived/04_composition
-  mkdir -p ${mp2rage_folder}/${subj}/derived/04_composition/00_compute_t2s
   mkdir -p ${mp2rage_folder}/${subj}/derived/05_gm
   mkdir -p ${mp2rage_folder}/${subj}/derived/06_gm_artifact_masked
   mkdir -p ${mp2rage_folder}/${subj}/derived/07_evaluation

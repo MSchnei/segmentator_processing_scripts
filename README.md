@@ -182,7 +182,6 @@ And this folder tree for the MP2RAGE analysis:
 │   │   │   ├── fast
 │   │   │   └── fast_restored_gramag
 │   │   ├── 04_composition
-│   │   │   └── 00_compute_t2s
 │   │   ├── 05_gm
 │   │   ├── 06_gm_artifact_masked
 │   │   ├── 07_evaluation

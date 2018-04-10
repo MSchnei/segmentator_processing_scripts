@@ -24,6 +24,13 @@ declare -a app=(
         "S019"
                 )
 
+# set cbs extensions
+declare -a cbs=(
+	"_t1_defaced2_thresh_clone_transform_strip_mems_rcr_gm_cortex"
+	"_t1_defaced2_thresh_clone_transform_strip_mems_lcr_gm_cortex"
+	"_t1_defaced2_thresh_clone_transform_strip_mems_gm_cortex"
+								)
+
 # join hemisphere segmentations for all subjects
 subjLen=${#app[@]}
 for (( i=0; i<${subjLen}; i++ )); do
@@ -31,19 +38,19 @@ for (( i=0; i<${subjLen}; i++ )); do
   subj=${app[i]}
 	# join hemispheres
   command="fslmaths "
-  command+="${parent_path}/${subj}/derived/03_uni/cbs/${subj}_t1_thresh_clone_transform_strip_mems_rcr_gm_cortex "
+  command+="${parent_path}/${subj}/derived/03_uni/cbs/${subj}${cbs[0]} "
   command+="-add "
-  command+="${parent_path}/${subj}/derived/03_uni/cbs/${subj}_t1_thresh_clone_transform_strip_mems_lcr_gm_cortex "
+  command+="${parent_path}/${subj}/derived/03_uni/cbs/${subj}${cbs[1]} "
   command+="-thr 1 -uthr 1 "
-  command+="${parent_path}/${subj}/derived/03_uni/cbs/${subj}_t1_thresh_clone_transform_strip_mems_gm_cortex"
+  command+="${parent_path}/${subj}/derived/03_uni/cbs/${subj}${cbs[2]}"
   echo "${command}"
   ${command}
 	# mask with brain and no submask
 	command="fslmaths "
-	command+="${parent_path}/${subj}/derived/03_uni/cbs/${subj}_t1_thresh_clone_transform_strip_mems_gm_cortex "
+	command+="${parent_path}/${subj}/derived/03_uni/cbs/${subj}${cbs[2]} "
 	command+="-mas "
 	command+="${parent_path}/${subj}/derived/02_masks/brain_mask_nosub "
-	command+="${parent_path}/${subj}/derived/03_uni/cbs/${subj}_t1_thresh_clone_transform_strip_mems_gm_cortex_mas"
+	command+="${parent_path}/${subj}/derived/03_uni/cbs/${subj}${cbs[2]}_mas"
 	echo "${command}"
 	${command}
 done

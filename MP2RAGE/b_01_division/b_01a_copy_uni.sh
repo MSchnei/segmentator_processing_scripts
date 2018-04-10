@@ -28,20 +28,20 @@ declare -a cbs=(
 # list all subject names
 declare -a app=(
 		"001"
-        "013"
-        "014"
-        "019"
-                )
+    "013"
+    "014"
+    "019"
+        )
 
 # create division images for all subjects
 subjLen=${#app[@]}
 for (( i=0; i<${subjLen}; i++ )); do
 	# derive particular subject name
-  	subj=${app[i]}
+  subj=${app[i]}
 	ext=${cbs[i]}
 	cbsuni="${cbs_path}/sub-${subj}/cbs/exp-0000/exp-0000-B/reorient/${ext}.nii.gz"
 	destination="${mp2rage_analysis_folder}/S${subj}/derived/03_uni/S${subj}_uni.nii.gz"
-  	command="cp ${cbsuni} ${destination}"
-  	echo "${command}"
-  	${command}
+  command="cp ${cbsuni} ${destination}"
+  echo "${command}"
+  ${command}
 done

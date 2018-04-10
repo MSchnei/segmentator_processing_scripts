@@ -12,30 +12,31 @@
 ####    -copy of uni.nii.gz for all subjects
 #### Written by: Marian Schneider, Faruk Gulban
 
-# set parent path
-parent_path="${segm_path}/analysis/MP2RAGE"
+# deduce path to cbs data
+cbs_path="${segm_path}/data/shared_data/data_mp2rage/derivatives"
+# deduce path to mp2rage analysis folder
+mp2rage_analysis_folder="${segm_path}/analysis/MP2RAGE"
 
 # set cbs extensions
 declare -a uni=(
-	"RoyHaa_110416_S001C001_Ses2_20160411_001_020_mp2rage_iso0_7_iPAT3_mp2rage_iso0_7_iPAT3_UNI_Images_clone_transform"
-	"RoyHaa_260315_S013C001_20150326_001_021_mp2rage_iso0_7_iPAT3_mp2rage_iso0_7_iPAT3_UNI_Images_clone_transform"
-	"RoyHaa_080415_S014C001_20150408_001_021_mp2rage_iso0_7_iPAT3_mp2rage_iso0_7_iPAT3_UNI_Images_clone_transform"
-	"RoyHaa_060515_S019C001_20150506_001_023_mp2rage_iso0_7_iPAT3_mp2rage_iso0_7_iPAT3_UNI_Images_clone_transform"
-								)
+	"sub-001_uni_defaced_clone_transform"
+	"sub-013_uni_defaced_clone_transform"
+	"sub-014_uni_defaced_clone_transform"
+	"sub-019_uni_defaced_clone_transform")
 
 declare -a inv2=(
-	"unknown"
-	"unknown"
-	"unknown"
-	"unknown"
+	"sub-001_inv2_defaced_clone_transform"
+	"sub-013_inv2_defaced_clone_transform"
+	"sub-014_inv2_defaced_clone_transform"
+	"sub-019_inv2_defaced_clone_transform"
 								)
 
 # list all subject names
 declare -a app=(
-				"S001"
-        "S013"
-        "S014"
-        "S019"
+				"001"
+        "013"
+        "014"
+        "019"
                 )
 
 # create division images for all subjects
@@ -45,16 +46,16 @@ for (( i=0; i<${subjLen}; i++ )); do
   subj=${app[i]}
 	# copy uni imgaes
 	extuni=${uni[i]}
-	cbsuni="${parent_path}/${subj}/derived/03_uni/cbs/exp-0000/exp-0000-B/reorient/${extuni}.nii.gz"
-	destination="${parent_path}/${subj}/derived/04_composition/${subj}_uni.nii.gz"
+	cbsuni="${cbs_path}/sub-${subj}/cbs/exp-0000/exp-0000-B/reorient/${extuni}.nii.gz"
+	destination="${mp2rage_analysis_folder}/S${subj}/derived/04_composition/S${subj}_uni.nii.gz"
   command="cp ${cbsuni} ${destination}"
   echo "${command}"
   ${command}
 	# copy inv2 images
 	extinv2=${inv2[i]}
-	cbsuni="${parent_path}/${subj}/derived/03_uni/cbs/exp-0000/exp-0000-?/reorient/${extinv2}.nii.gz"
-	destination="${parent_path}/${subj}/derived/04_composition/${subj}_inv2.nii.gz"
-  command="cp ${cbsuni} ${destination}"
+	cbsinv2="${cbs_path}/sub-${subj}/cbs/exp-0000/exp-0000-C/reorient/${extinv2}.nii.gz"
+	destination="${mp2rage_analysis_folder}/S${subj}/derived/04_composition/S${subj}_inv2.nii.gz"
+  command="cp ${cbsinv2} ${destination}"
   echo "${command}"
   ${command}
 done

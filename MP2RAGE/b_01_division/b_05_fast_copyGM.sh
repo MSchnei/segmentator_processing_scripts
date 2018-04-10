@@ -11,7 +11,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"
+parent_path="${segm_path}/analysis/MP2RAGE"
 
 # list all subject names
 declare -a app=(
@@ -26,13 +26,13 @@ subjLen=${#app[@]}
 for (( i=0; i<${subjLen}; i++ )); do
   subj=${app[i]}
 	# get only the grey matter
-  input="${parentpath}/${subj}/derived/03_uni/fast/${subj}_uni_seg"
-	output="${parentpath}/${subj}/derived/03_uni/fast/${subj}_uni_GM"
+  input="${parent_path}/${subj}/derived/03_uni/fast/${subj}_uni_seg"
+	output="${parent_path}/${subj}/derived/03_uni/fast/${subj}_uni_GM"
 	command="fslmaths ${input} -thr 2 -uthr 2 -div 2 ${output}"
 	echo "${command}"
 	${command}
 	# copy gm file into GM directory
-	destination="${parentpath}/${subj}/derived/05_gm/${subj}_uni_fast_gm"
+	destination="${parent_path}/${subj}/derived/05_gm/${subj}_uni_fast_gm"
 	command="cp ${output}.nii.gz ${destination}.nii.gz"
 	echo "${command}"
 	${command}

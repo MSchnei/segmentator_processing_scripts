@@ -27,7 +27,7 @@ from tabulate import tabulate
 
 # %%
 # specify path to the directory
-dirname = '/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE/'
+dir_name = str(os.environ['segm_path']) + "/analysis/MPRAGE"
 # specify whether the fast or the spm table should be produced
 switchList = ['cbs', 'fast']
 # specify subject identifiers
@@ -48,9 +48,9 @@ for switch in switchList:
     for sub in subj:
         # get file path
         if not artimask:
-            tempPath = os.path.join(dirname, sub, 'derived', '07_evaluation/')
+            tempPath = os.path.join(dir_name, sub, 'derived', '07_evaluation/')
         elif artimask:
-            tempPath = os.path.join(dirname, sub, 'derived',
+            tempPath = os.path.join(dir_name, sub, 'derived',
                                     '08_evaluation_artifact_masked/')
 
         # get a list of all files that are in path and fullfil the switch id

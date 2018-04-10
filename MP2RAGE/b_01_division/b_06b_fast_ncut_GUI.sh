@@ -13,7 +13,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"
+parent_path="${segm_path}/analysis/MP2RAGE"
 
 # list all subject names
 declare -a arr_t1=(
@@ -41,8 +41,8 @@ echo "====================="
 tLen=${#arr_t1[@]}
 for (( i=0; i<${tLen}; i++ )); do
   subj=${arr_t1[i]}
-  input_name="${parentpath}/${subj}/derived/03_uni/fast/${subj}_uni_restore.nii.gz"
-  input_ncut="${parentpath}/${subj}/derived/03_uni/fast/${subj}${ncut_base}"
+  input_name="${parent_path}/${subj}/derived/03_uni/fast/${subj}_uni_restore.nii.gz"
+  input_ncut="${parent_path}/${subj}/derived/03_uni/fast/${subj}${ncut_base}"
 
   command="segmentator $input_name --ncut $input_ncut "
   command+="--percmin ${percmin} --percmax ${percmax} --scale ${scale} "

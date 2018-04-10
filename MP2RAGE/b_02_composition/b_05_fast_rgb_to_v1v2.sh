@@ -14,11 +14,12 @@
 ####    -ilr2 image
 #### Written by: Marian Schneider, Faruk Gulban
 
-# directory:
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"
-codedirectory="/home/marian/gdrive/temp_segmentator_paper_data/code"
+# set parent path
+parent_path="${segm_path}/analysis/MP2RAGE"
+# set path to code directory
+code_directory="${segm_path}/code"
 # Go to input directory
-cd ${codedirectory}
+cd ${code_directory}
 
 # list all subject names
 declare -a app=(
@@ -34,10 +35,10 @@ for (( i=0; i<${subjLen}; i++ )); do
   print="----- Subj ${subj} fast -----"
   echo ${print}
   command="python rgb_to_v1v2_cmdlne.py "
-  command+="${parentpath}/${subj}/derived/04_composition/${subj}_trio_restore_3.nii.gz "  # uni
-  command+="${parentpath}/${subj}/derived/04_composition/${subj}_trio_restore_2.nii.gz "  # inv2
-  command+="${parentpath}/${subj}/derived/04_composition/${subj}_trio_restore_1.nii.gz "  # t2s
-  command+="${parentpath}/${subj}/derived/02_masks/brain_mask_nosub.nii.gz"
+  command+="${parent_path}/${subj}/derived/04_composition/${subj}_trio_restore_3.nii.gz "  # uni
+  command+="${parent_path}/${subj}/derived/04_composition/${subj}_trio_restore_2.nii.gz "  # inv2
+  command+="${parent_path}/${subj}/derived/04_composition/${subj}_trio_restore_1.nii.gz "  # t2s
+  command+="${parent_path}/${subj}/derived/02_masks/brain_mask_nosub.nii.gz"
   echo ${command}
   ${command}
 done

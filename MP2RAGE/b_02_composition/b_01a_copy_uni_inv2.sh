@@ -13,7 +13,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"
+parent_path="${segm_path}/analysis/MP2RAGE"
 
 # set cbs extensions
 declare -a uni=(
@@ -45,15 +45,15 @@ for (( i=0; i<${subjLen}; i++ )); do
   subj=${app[i]}
 	# copy uni imgaes
 	extuni=${uni[i]}
-	cbsuni="${parentpath}/${subj}/derived/03_uni/cbs/exp-0000/exp-0000-B/reorient/${extuni}.nii.gz"
-	destination="${parentpath}/${subj}/derived/04_composition/${subj}_uni.nii.gz"
+	cbsuni="${parent_path}/${subj}/derived/03_uni/cbs/exp-0000/exp-0000-B/reorient/${extuni}.nii.gz"
+	destination="${parent_path}/${subj}/derived/04_composition/${subj}_uni.nii.gz"
   command="cp ${cbsuni} ${destination}"
   echo "${command}"
   ${command}
 	# copy inv2 images
 	extinv2=${inv2[i]}
-	cbsuni="${parentpath}/${subj}/derived/03_uni/cbs/exp-0000/exp-0000-?/reorient/${extinv2}.nii.gz"
-	destination="${parentpath}/${subj}/derived/04_composition/${subj}_inv2.nii.gz"
+	cbsuni="${parent_path}/${subj}/derived/03_uni/cbs/exp-0000/exp-0000-?/reorient/${extinv2}.nii.gz"
+	destination="${parent_path}/${subj}/derived/04_composition/${subj}_inv2.nii.gz"
   command="cp ${cbsuni} ${destination}"
   echo "${command}"
   ${command}

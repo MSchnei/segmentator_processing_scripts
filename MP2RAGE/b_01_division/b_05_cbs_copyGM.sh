@@ -11,7 +11,7 @@ uni#!/bin/bash
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"
+parent_path="${segm_path}/analysis/MP2RAGE"
 
 # list all subject names
 declare -a app=(
@@ -26,8 +26,8 @@ subjLen=${#app[@]}
 for (( i=0; i<${subjLen}; i++ )); do
   subj=${app[i]}
 	# copy gm file into GM directory
-	source="${parentpath}/${subj}/derived/03_uni/cbs/${subj}_t1_thresh_clone_transform_strip_mems_gm_cortex_mas"
-	destination="${parentpath}/${subj}/derived/05_gm/${subj}_uni_cbs_gm"
+	source="${parent_path}/${subj}/derived/03_uni/cbs/${subj}_t1_thresh_clone_transform_strip_mems_gm_cortex_mas"
+	destination="${parent_path}/${subj}/derived/05_gm/${subj}_uni_cbs_gm"
 	command="cp ${source}.nii.gz ${destination}.nii.gz"
 	echo "${command}"
 	${command}

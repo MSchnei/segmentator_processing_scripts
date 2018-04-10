@@ -12,7 +12,8 @@
 ####    -artifact-masked grey matter segmentations
 #### Written by: Marian Schneider, Faruk Gulban
 
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"
+# set parent path
+parent_path="${segm_path}/analysis/MP2RAGE"
 
 # list all subject names
 declare -a app=(
@@ -42,24 +43,24 @@ for (( i=0; i<${subjLen}; i++ )); do
 	# derive subject names
 	subj=${app[i]}
 	# derive artifact mask name
-	mask="$parentpath/${subj}/derived/02_masks/artifact_mask"
+	mask="$parent_path/${subj}/derived/02_masks/artifact_mask"
 	# mask segmentations with artifact mask
 	echo "...Masking segmentations with artifact mask..."
   for (( j=0; j<${gmLen}; j++ )); do
 		# ribbons
     gm=${arr_seg[j]}
-    input_name="${parentpath}/${subj}/derived/05_gm/${subj}${gm}"
+    input_name="${parent_path}/${subj}/derived/05_gm/${subj}${gm}"
     new_name="${input_name}_artifact_masked"
-    out_dir="${parentpath}/${subj}/derived/06_gm_artifact_masked"
+    out_dir="${parent_path}/${subj}/derived/06_gm_artifact_masked"
     new_name_out=${out_dir}/$(basename $new_name)
 		command="fslmaths ${input_name} -mas ${mask} ${new_name_out}"
     echo ${command}
     ${command}
 		# borders
 		gm=${arr_seg[j]}
-		input_name="${parentpath}/${subj}/derived/05_gm/${subj}${gm}_borders"
+		input_name="${parent_path}/${subj}/derived/05_gm/${subj}${gm}_borders"
 		new_name="${input_name}_artifact_masked"
-		out_dir="${parentpath}/${subj}/derived/06_gm_artifact_masked"
+		out_dir="${parent_path}/${subj}/derived/06_gm_artifact_masked"
 		new_name_out=${out_dir}/$(basename $new_name)
 		command="fslmaths ${input_name} -mas ${mask} ${new_name_out}"
 		echo ${command}
@@ -68,17 +69,17 @@ for (( i=0; i<${subjLen}; i++ )); do
 	# mask ground truth with artifact mask
 	echo "...Masking ground truths with artifact mask..."
 	# ribbon
-	input_name="${parentpath}/${subj}/derived/01_ground_truth/${subj}_gm_0?.nii.gz"
+	input_name="${parent_path}/${subj}/derived/01_ground_truth/${subj}_gm_0?.nii.gz"
 	new_name=$(echo $input_name | cut -f 1 -d '.')"_artifact_masked"
-	out_dir="${parentpath}/${subj}/derived/01_ground_truth"
+	out_dir="${parent_path}/${subj}/derived/01_ground_truth"
 	new_name_out=${out_dir}/$(basename $new_name)
 	command="fslmaths ${input_name} -mas ${mask} ${new_name_out}"
 	echo ${command}
 	${command}
 	# border
-	input_name="${parentpath}/${subj}/derived/01_ground_truth/${subj}_gm_0?_borders.nii.gz"
+	input_name="${parent_path}/${subj}/derived/01_ground_truth/${subj}_gm_0?_borders.nii.gz"
 	new_name=$(echo $input_name | cut -f 1 -d '.')"_artifact_masked"
-	out_dir="${parentpath}/${subj}/derived/01_ground_truth"
+	out_dir="${parent_path}/${subj}/derived/01_ground_truth"
 	new_name_out=${out_dir}/$(basename $new_name)
 	command="fslmaths ${input_name} -mas ${mask} ${new_name_out}"
 	echo ${command}

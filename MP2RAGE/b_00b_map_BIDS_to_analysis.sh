@@ -48,7 +48,7 @@ for (( j=0; j<${subjLen}; j++ )); do
   # copy ground truth files
   cp ${mp2rage_data_folder}/derivatives/sub-${subj}/ground_truth/sub-${subj}_gm_v*.nii.gz ${mp2rage_analysis_folder}/S${subj}/derived/01_ground_truth/S${subj}_gm_01.nii.gz
 
-  # copy T2 start map
+  # copy T2 star map
   cp ${mp2rage_data_folder}/derivatives/sub-${subj}/t2star/sub-${subj}_t2s_map_resliced_defaced.nii.gz ${mp2rage_analysis_folder}/S${subj}/derived/04_composition/S${subj}_t2s.nii.gz
 
 done

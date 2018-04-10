@@ -12,7 +12,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"
+parent_path="${segm_path}/analysis/MP2RAGE"
 
 # list all subject names
 declare -a app=(
@@ -30,13 +30,13 @@ for (( i=0; i<${subjLen}; i++ )); do
 	# call to fslmaths
   command="fslmaths "
 	# specify path to T1wDivPD image
-  command+="${parentpath}/${subj}/derived/03_uni/${subj}_uni "
+  command+="${parent_path}/${subj}/derived/03_uni/${subj}_uni "
 	# mask
   command+="-mas "
 	# specify path to brain+subcortical mask image
-  command+="${parentpath}/${subj}/derived/02_masks/brain_mask_nosub "
+  command+="${parent_path}/${subj}/derived/02_masks/brain_mask_nosub "
 	# specify output name
-  command+="${parentpath}/${subj}/derived/03_uni/${subj}_uni_bet_nosub"
+  command+="${parent_path}/${subj}/derived/03_uni/${subj}_uni_bet_nosub"
   echo "${command}"
   ${command}
 done

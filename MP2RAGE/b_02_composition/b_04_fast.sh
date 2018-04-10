@@ -14,7 +14,7 @@
 #### Written by: Marian Schneider, Faruk Gulban
 
 # set parent path
-parentpath="/home/marian/gdrive/temp_segmentator_paper_data/MP2RAGE"
+parent_path="${segm_path}/analysis/MP2RAGE"
 
 # list all subject names
 declare -a app=(
@@ -30,10 +30,10 @@ for (( i=0; i<${subjLen}; i++ )); do
   subj=${app[i]}
   command="fast "
   command+="-S 3 -n 3 -H 0.1 -I 4 -l 20.0 --nopve -B -b "
-  command+="-o ${parentpath}/${subj}/derived/04_composition/${subj}_trio "
-	command+="${parentpath}/${subj}/derived/04_composition/${subj}_uni_bet_nosub "
-	command+="${parentpath}/${subj}/derived/04_composition/${subj}_inv2_bet_nosub "
-	command+="${parentpath}/${subj}/derived/04_composition/${subj}_t2s_bet_nosub "
+  command+="-o ${parent_path}/${subj}/derived/04_composition/${subj}_trio "
+	command+="${parent_path}/${subj}/derived/04_composition/${subj}_uni_bet_nosub "
+	command+="${parent_path}/${subj}/derived/04_composition/${subj}_inv2_bet_nosub "
+	command+="${parent_path}/${subj}/derived/04_composition/${subj}_t2s_bet_nosub "
   echo "${command}"
   ${command}
 done

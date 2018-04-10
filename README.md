@@ -179,7 +179,6 @@ And this folder tree for the MP2RAGE analysis:
 │   │   ├── 02_masks
 │   │   ├── 03_uni
 │   │   │   ├── cbs
-│   │   │   │   └── exp-0000
 │   │   │   ├── fast
 │   │   │   └── fast_restored_gramag
 │   │   ├── 04_composition

@@ -26,7 +26,7 @@ subjLen=${#app[@]}
 for (( i=0; i<${subjLen}; i++ )); do
   subj=${app[i]}
 	# copy gm file into GM directory
-	source="${parent_path}/${subj}/derived/03_uni/cbs/${subj}_t1_thresh_clone_transform_strip_mems_gm_cortex_mas"
+	source="${parent_path}/${subj}/derived/03_uni/cbs/${subj}_t1_defaced2_thresh_clone_transform_strip_mems_gm_cortex_mas"
 	destination="${parent_path}/${subj}/derived/05_gm/${subj}_uni_cbs_gm"
 	command="cp ${source}.nii.gz ${destination}.nii.gz"
 	echo "${command}"

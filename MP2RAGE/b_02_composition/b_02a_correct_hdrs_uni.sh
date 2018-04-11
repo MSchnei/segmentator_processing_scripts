@@ -22,7 +22,7 @@ declare -a app=(
         "S019"
                 )
 
-# mask all images with brain mask
+# correct uni image hader for all subjects
 subjLen=${#app[@]}
 for (( i=0; i<${subjLen}; i++ )); do
 	# derive particular subject name

@@ -33,7 +33,7 @@ declare -a app=(
     "019"
         )
 
-# create division images for all subjects
+# copy reoriented uni image
 subjLen=${#app[@]}
 for (( i=0; i<${subjLen}; i++ )); do
 	# derive particular subject name

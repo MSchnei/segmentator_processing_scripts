@@ -1,4 +1,5 @@
 """
+
 Description: Find grey matter borders for ground truth.
 To be set:
    -path to parent directory,
@@ -16,7 +17,7 @@ from scipy.ndimage import morphology, generate_binary_structure
 from nibabel import load, save, Nifti1Image
 
 """Load Data"""
-parent_path = str(os.environ['segm_path']) + "/analysis/MPRAGE"
+parent_path = str(os.environ['segm_path']) + "/analysis/MP2RAGE"
 lsSubj = ["S001", "S013", "S014", "S019"]
 
 for subj in lsSubj:

@@ -1,4 +1,5 @@
 """
+
 Description: Find grey matter borders for GM segmentations.
 To be set:
    -path to parent directory,
@@ -17,7 +18,7 @@ from nibabel import load, save, Nifti1Image
 
 """Load Data"""
 
-parent_path = str(os.environ['segm_path']) + "/analysis/MPRAGE"
+parent_path = str(os.environ['segm_path']) + "/analysis/MP2RAGE"
 lsSubj = ["S001", "S013", "S014", "S019"]
 lsGM = ["_uni_fast_gm", "_uni_fast_gm_gramag",
         "_uni_fast_gm_simplex", "_uni_cbs_gm",

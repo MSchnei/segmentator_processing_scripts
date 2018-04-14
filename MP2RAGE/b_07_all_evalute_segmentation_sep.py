@@ -27,7 +27,7 @@ from tabulate import tabulate
 
 # %%
 # specify path to the directory
-dir_name = str(os.environ['segm_path']) + "/analysis/MPRAGE"
+dir_name = str(os.environ['segm_path']) + "/analysis/MP2RAGE"
 # specify whether the fast or the spm table should be produced
 switchList = ['cbs', 'fast']
 # specify subject identifiers

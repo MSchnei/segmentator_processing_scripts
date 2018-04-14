@@ -53,7 +53,7 @@ for (( i=0; i<${subjLen}; i++ )); do
     new_name="${input_name}_artifact_masked"
     out_dir="${parent_path}/${subj}/derived/06_gm_artifact_masked"
     new_name_out=${out_dir}/$(basename $new_name)
-		command="fslmaths ${input_name} -mas ${mask} ${new_name_out}"
+	command="fslmaths ${mask} -binv -mul ${input_name} ${new_name_out}"
     echo ${command}
     ${command}
 		# borders
@@ -62,7 +62,7 @@ for (( i=0; i<${subjLen}; i++ )); do
 		new_name="${input_name}_artifact_masked"
 		out_dir="${parent_path}/${subj}/derived/06_gm_artifact_masked"
 		new_name_out=${out_dir}/$(basename $new_name)
-		command="fslmaths ${input_name} -mas ${mask} ${new_name_out}"
+		command="fslmaths ${mask} -binv -mul ${input_name} ${new_name_out}"
 		echo ${command}
 		${command}
   done
@@ -73,7 +73,7 @@ for (( i=0; i<${subjLen}; i++ )); do
 	new_name=$(echo $input_name | cut -f 1 -d '.')"_artifact_masked"
 	out_dir="${parent_path}/${subj}/derived/01_ground_truth"
 	new_name_out=${out_dir}/$(basename $new_name)
-	command="fslmaths ${input_name} -mas ${mask} ${new_name_out}"
+	command="fslmaths ${mask} -binv -mul ${input_name} ${new_name_out}"
 	echo ${command}
 	${command}
 	# border
@@ -81,7 +81,7 @@ for (( i=0; i<${subjLen}; i++ )); do
 	new_name=$(echo $input_name | cut -f 1 -d '.')"_artifact_masked"
 	out_dir="${parent_path}/${subj}/derived/01_ground_truth"
 	new_name_out=${out_dir}/$(basename $new_name)
-	command="fslmaths ${input_name} -mas ${mask} ${new_name_out}"
+	command="fslmaths ${mask} -binv -mul ${input_name} ${new_name_out}"
 	echo ${command}
 	${command}
 
